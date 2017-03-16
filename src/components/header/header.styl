@@ -1,0 +1,39 @@
+@import '../../styles/colors';
+
+header-elements-count = 5;
+
+.c-header {
+  padding-top 10px;
+  padding-bottom 10px;
+  background-color accent-background-color;
+  color accent-text-color
+}
+
+.c-header__phone,
+.c-header__email,
+.c-header__social,
+.c-header__partners,
+.c-header__languages {
+  display inline-block
+  min-width (100% / header-elements-count)
+  text-align center
+}
+
+.c-header__social-vk,
+.c-header__social-fb,
+.c-header__social-tw,
+.c-header__social-inst {
+  display inline-block
+  padding-left 5px
+  padding-right 5px
+}
+
+.c-header__language {
+  display inline-block
+  padding-left 5px
+  padding-right 5px
+}
+
+.c-header__link {
+  color accent-text-color
+}
