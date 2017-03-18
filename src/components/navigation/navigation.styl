@@ -1,0 +1,28 @@
+@import '../../styles/colors';
+
+navigation-items-count = 9;
+
+.c-navigation {
+  padding-top 10px;
+  padding-bottom 10px;
+  background-color common-background-color;
+  color common-text-color
+  overflow: hidden
+  
+  &:after {
+    content: ''
+    clear: both
+  }
+}
+
+.c-navigation__item,
+.c-navigation__logo {
+  float left
+  min-width (100% / navigation-items-count)
+  text-align center
+  color common-text-color
+}
+
+.c-navigation__logo {
+
+}
