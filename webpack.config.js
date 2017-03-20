@@ -23,6 +23,89 @@ const generatePage = createPageGenerator(paths.pages);
 
 const dependencies = findImports('src/**/*.js', { flatten: true });
 
+//правила обработки js
+const jsRule = {
+    test: /\.js$/,
+    include: paths.src,
+    use: {
+        loader: 'babel-loader',
+        options: {
+            presets: [['es2015', {modules: false}]]
+        }
+    }
+};
+//правила обработки шаблонов (pug)
+const pugRule = {
+    test: /\.pug$/,
+    include: paths.src,
+    use: [
+        'html-loader',
+        {
+            loader: 'pug-html-loader',
+            options: {pretty: true}
+        }
+    ]
+};
+//правила обработки вендорных стилей
+const vendorsStylesRule = {
+    test: /\.css/,
+    include: /node_modules/,
+    use: ExtractTextWebpackPlugin.extract({
+        fallback: 'style-loader',
+        use: [
+            {
+                loader: 'css-loader',
+                options: {
+                    minimize: PRODUCTION_MODE,
+                    sourceMap: true
+                }
+            }
+        ]
+    })
+};
+//правила обработки стилей приложения
+const appStylesRule = {
+    test: /\.styl/,
+    include: paths.src,
+    use: ExtractTextWebpackPlugin.extract({
+        fallback: 'style-loader',
+        use: [
+            {
+                loader: 'css-loader',
+                options: {
+                    minimize: PRODUCTION_MODE,
+                    sourceMap: true
+                }
+            },
+            {
+                loader: 'postcss-loader',
+                options: {
+                    plugins: [
+                        autoprefixer({browsers: 'last 2 versions'})
+                    ]
+                }
+            },
+            {
+                loader: 'stylus-loader',
+                options: {
+                    preferPathResolver: 'webpack',
+                }
+            }
+        ]
+    })
+};
+//правила обработки шрифтов
+const fontsRule = {
+    test: /\.(eot|svg|ttf|woff|woff2)$/,
+    use: {
+        loader: 'file-loader',
+        options: {
+            name: '../fonts/[name].[ext]',
+            outputPath: 'fonts/'
+        }
+    }
+};
+
 const common = {
     entry: {
         vendors: dependencies,
@@ -36,83 +119,11 @@ const common = {
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                include: paths.src,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: [['es2015', {modules: false}]]
-                    }
-                }
-            },
-            {
-                test: /\.pug$/,
-                include: paths.src,
-                use: [
-                    'html-loader',
-                    {
-                        loader: 'pug-html-loader',
-                        options: {pretty: true}
-                    }
-                ]
-            },
-            {
-                test: /\.css/,
-                include: /node_modules/,
-                use: ExtractTextWebpackPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                minimize: PRODUCTION_MODE,
-                                sourceMap: true
-                            }
-                        }
-                    ]
-                })
-            },
-            {
-                test: /\.styl/,
-                include: paths.src,
-                use: ExtractTextWebpackPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                minimize: PRODUCTION_MODE,
-                                sourceMap: true
-                            }
-                        },
-                        {
-                            loader: 'postcss-loader',
-                            options: {
-                                plugins: [
-                                    autoprefixer({browsers: 'last 2 versions'})
-                                ]
-                            }
-                        },
-                        {
-                            loader: 'stylus-loader',
-                            options: {
-                                preferPathResolver: 'webpack',
-                            }
-                        }
-                    ]
-                })
-            },
-            {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '../fonts/[name].[ext]',
-                        outputPath: 'fonts/'
-                    }
-                }
-            }
+            jsRule,
+            pugRule,
+            vendorsStylesRule,
+            appStylesRule,
+            fontsRule
         ]
     },
     resolve: {
