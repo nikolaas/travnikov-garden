@@ -1,45 +1,62 @@
 @import '../../styles/colors';
 
-header-elements-count = 5;
+header-height = 50px;
+header-text-size = 12px
+header-contact-icon-size = 16px
+header-contact-icon-color = #6fba57
+header-social-icon-size = 18px
+header-language-size = 14px
 
 .c-header {
-  padding-top 10px;
-  padding-bottom 10px;
+  height header-height
   background-color accent-background-color;
   color accent-text-color
-  overflow: hidden
-  
-  &:after {
-    content: ''
-    clear: both
-  }
-}
-
-.c-header__phone,
-.c-header__email,
-.c-header__social,
-.c-header__partners,
-.c-header__languages {
-  float left
-  min-width (100% / header-elements-count)
-  text-align center
-}
-
-.c-header__social-vk,
-.c-header__social-fb,
-.c-header__social-tw,
-.c-header__social-inst {
-  display inline-block
-  padding-left 5px
-  padding-right 5px
-}
-
-.c-header__language {
-  display inline-block
-  padding-left 5px
-  padding-right 5px
+  font-size header-text-size
 }
 
 .c-header__link {
   color accent-text-color
+
+  &:focus,
+  &:visited,
+  &:active,
+  &:hover {
+    color accent-text-color
+  }
+}
+
+.c-header__element {
+  display inline-block
+  line-height header-height
+  padding-left 5px
+  padding-right 5px
+
+  &:first-child {
+    padding-left 0
+  }
+
+  &:last-child {
+    padding-right 0
+  }
+}
+
+.c-header__element--contact-icon {
+  font-size header-contact-icon-size
+  color header-contact-icon-color
+}
+
+.c-header__element--social {
+  font-size header-social-icon-size
+
+  &:hover {
+    text-decoration none
+  }
+}
+
+.c-header__language {
+  font-size header-language-size
+}
+
+.c-header__language--active {
+  text-decoration underline
 }

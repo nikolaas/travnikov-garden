@@ -1,16 +1,26 @@
 mixin header
     .c-header&attributes(attributes)
-        .c-header__phone +7 915 191 77 07
-        .c-header__email
-            a.c-header__link(href="mailto:circleplease@gmail.com" target="_top") circleplease@gmail.com
-        .c-header__social
-            a.c-header__link.c-header__social-vk(href="#") vk
-            a.c-header__link.c-header__social-fb(href="#") fb
-            a.c-header__link.c-header__social-tw(href="#") tw
-            a.c-header__link.c-header__social-inst(href="#") inst
-        .c-header__partners
-            a.c-header__link(href="www.mospriroda.ru") www.mospriroda.ru
-        .c-header__languages
-            p.c-header__language EN
-            p.c-header__language |
-            a.c-header__link.c-header__language(href="#") RU
+        .container
+            .row
+                .col-md-2
+                    i.c-header__element.c-header__element--contact-icon.fa.fa-phone
+                    span.c-header__element +7 915 191 77 07
+                .col-md-3
+                    a.c-header__element.c-header__link(href="mailto:circleplease@gmail.com" target="_top")
+                        i.c-header__element.c-header__element--contact-icon.fa.fa-envelope
+                        span circleplease@gmail.com
+                .col-md-3
+                    a.c-header__element.c-header__element--social.c-header__link(href="#")
+                        i.c-header__element.fa.fa-vk
+                    a.c-header__element.c-header__element--social.c-header__link(href="#")
+                        i.c-header__element.fa.fa-facebook
+                    a.c-header__element.c-header__element--social.c-header__link(href="#")
+                        i.c-header__element.fa.fa-twitter
+                    a.c-header__element.c-header__element--social.c-header__link(href="#")
+                        i.c-header__element.fa.fa-instagram
+                .col-md-3
+                    a.c-header__element.c-header__link(href="http://www.mospriroda.ru") www.mospriroda.ru
+                .col-md-1.c-header__languages
+                    a.c-header__element.c-header__language.c-header__link(href="#") EN
+                    span.c-header__language |
+                    span.c-header__element.c-header__language.c-header__language--active RU
