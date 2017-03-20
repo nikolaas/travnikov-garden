@@ -8,13 +8,14 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const createPageGenerator = require('./libs/create-page-generator');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const SpritesmithPlugin = require('webpack-spritesmith');
 const autoprefixer = require('autoprefixer');
 const createFileNameGenerator = require('./libs/create-file-name-generator');
 const hashedName = createFileNameGenerator(PRODUCTION_MODE);
 
-
 const paths = {
     src: path.resolve(__dirname, 'src'),
+    generatedSrc: path.resolve(__dirname, 'generated_src'),
     pages: path.resolve(__dirname, 'src', 'pages'),
     dist: path.resolve(__dirname, 'dist')
 };
@@ -66,7 +67,7 @@ const vendorsStylesRule = {
 //правила обработки стилей приложения
 const appStylesRule = {
     test: /\.styl/,
-    include: paths.src,
+    include: /src|generated_src/,
     use: ExtractTextWebpackPlugin.extract({
         fallback: 'style-loader',
         use: [
@@ -105,6 +106,18 @@ const fontsRule = {
         }
     }
 };
+//правила обработки шрифтов
+const imagesRule = {
+    test: /\.png$/,
+    include: /src|generated_src/,
+    use: {
+        loader: 'file-loader',
+        options: {
+            name: '../images/[name].[ext]',
+            outputPath: 'images/'
+        }
+    }
+};
 
 const common = {
     entry: {
@@ -123,18 +136,33 @@ const common = {
             pugRule,
             vendorsStylesRule,
             appStylesRule,
-            fontsRule
+            fontsRule,
+            imagesRule
         ]
     },
     resolve: {
-        extensions: ['*', '.js', '.styl']
+        extensions: ['*', '.js', '.styl'],
+        modules: ['node_modules', 'generated_src']
     },
     plugins: [
-        new CleanWebpackPlugin([paths.dist], {root: __dirname}),
+        new CleanWebpackPlugin([paths.dist, paths.generatedSrc], {root: __dirname}),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['common', 'vendors'],
             minChunks: 2
+        }),
+        new SpritesmithPlugin({
+            src: {
+                cwd: path.resolve(paths.src, 'resources', 'images'),
+                glob: '*.png'
+            },
+            target: {
+                image: path.resolve(paths.generatedSrc, 'sprite.png'),
+                css: path.resolve(paths.generatedSrc, 'sprite.styl')
+            },
+            apiOptions: {
+                cssImageRef: "~sprite.png"
+            }
         }),
         new ExtractTextWebpackPlugin({
             filename: `css/${hashedName('[name]', 'css', '[contenthash]')}`,

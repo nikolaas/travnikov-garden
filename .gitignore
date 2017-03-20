@@ -3,7 +3,9 @@
 node_modules/
 
 dist/
+generated_src/
 
+*.log
 *.log.*
 
 stats.json
