@@ -1,11 +1,43 @@
 mixin navigation
-    .c-navigation&attributes(attributes)
-        a.c-navigation__item(href='/') Главная
-        a.c-navigation__item(href='/about.html') О саде
-        a.c-navigation__item(href='/plants.html') Растения
-        a.c-navigation__item(href='/gallery.html') Фотогалерея
-        a.c-navigation__logo LOGO
-        a.c-navigation__item(href='/visitors.html') Посетителям
-        a.c-navigation__item(href='/news.html') Новости
-        a.c-navigation__item(href='/partnership.html') Сотрудничество
-        a.c-navigation__item(href='/contacts.html') Контакты
+    nav.c-navigation
+        .container
+            .row
+                ul.col-md-5.col-xs-12.c-navigation__menu
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='/') Главная
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='/about.html') О саде
+                        //ul.c-navigation__sub-menu
+                        //    li.c-navigation__sub-menu-item
+                        //        a.c-navigation__sub-menu-link(href='#') История сада
+                        //        ul.c-navigation__sub-sub-menu
+                        //            li.c-navigation__sub-sub-menu-item
+                        //                a.c-navigation__sub-menu-link(href='#') Об сснователе
+                        //            li.c-navigation__sub-sub-menu-item
+                        //                a.c-navigation__sub-menu-link(href='#') О Н.И. Романовой
+                        //            li.c-navigation__sub-sub-menu-item
+                        //                a.c-navigation__sub-menu-link(href='#') Возврождение
+                        //    li.c-navigation__sub-menu-item
+                        //        a.c-navigation__sub-menu-link(href='#') Юридическое положение
+                        //        ul.c-navigation__sub-sub-menu
+                        //            li.c-navigation__sub-sub-menu-item
+                        //                a.c-navigation__sub-menu-link(href='#') Паспорт 1989
+                        //            li.c-navigation__sub-sub-menu-item
+                        //                a.c-navigation__sub-menu-link(href='#') Основание придания статуса ООПТ
+                        //            li.c-navigation__sub-sub-menu-item
+                        //                a.c-navigation__sub-menu-link(href='#') Паспорт 2016
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='/plants.html') Растения
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='/gallery.html') Фотогалерея
+                .col-md-2.c-navigation__logo
+                    a.c-navigation__logo-link(href='/')
+                ul.col-md-5.col-xs-12.c-navigation__menu
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='/visitors.html') Посетителям
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='/news.html') Новости
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='/partnership.html') Сотрудничество
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='/contacts.html') Контакты

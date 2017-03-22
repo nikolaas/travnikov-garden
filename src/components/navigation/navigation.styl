@@ -1,4 +1,6 @@
+@import '~sprite';
 @import '../../styles/colors';
+@import '../../styles/mixins';
 
 navigation-items-count = 9;
 
@@ -7,22 +9,81 @@ navigation-items-count = 9;
   padding-bottom 10px;
   background-color common-background-color;
   color common-text-color
-  overflow: hidden
-  
-  &:after {
-    content: ''
-    clear: both
+  font-family Georgia
+  font-size 14px
+}
+
+.c-navigation__menu {
+  line-height $logo_height
+  text-align justify
+  text-align-last: justify;
+}
+
+//.c-navigation__sub-menu {
+//  animated()
+//  position absolute
+//  top 100%
+//  transform scaleY(0)
+//  transform-origin left 0
+//  background-color accent-background-color
+//  color accent-text-color
+//}
+
+.c-navigation__menu-item {
+  position relative
+  display inline-block
+  line-height normal
+  text-align center
+
+  //&:hover {
+  //  .c-navigation__sub-menu {
+  //    transform scaleY(1)
+  //  }
+  //}
+}
+
+.c-navigation__logo {
+  text-align center
+}
+
+.c-navigation__logo-link {
+  sprite($logo);
+  display inline-block
+}
+
+.c-navigation__link {
+  animated();
+  text-transform uppercase
+  color common-text-color
+  padding 10px 5%
+  white-space nowrap
+
+  &:focus,
+  &:visited {
+    color common-text-color
+  }
+
+  &:active,
+  &:hover {
+    background-color accent-background-color
+    color accent-text-color
+    text-decoration none
   }
 }
 
-.c-navigation__item,
-.c-navigation__logo {
-  float left
-  min-width (100% / navigation-items-count)
-  text-align center
-  color common-text-color
-}
-
-.c-navigation__logo {
-
-}
+//.c-navigation__sub-menu-link {
+//  color accent-text-color
+//  padding 10px 5%
+//
+//  &:focus,
+//  &:visited {
+//    color accent-text-color
+//  }
+//
+//  &:active,
+//  &:hover {
+//    color accent-text-color
+//    text-decoration none
+//  }
+//
+//}
