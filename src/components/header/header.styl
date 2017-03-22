@@ -9,9 +9,55 @@ header-language-size = 14px
 
 .c-header {
   height header-height
+  line-height header-height
   background-color accent-background-color;
   color accent-text-color
   font-size header-text-size
+}
+
+.c-header__phone-section {
+  float left
+}
+
+.c-header__email-section {
+  float right
+}
+
+.c-header__social-section {
+  text-align center
+  font-size header-social-icon-size
+}
+
+.c-header__partner-section {
+  float left
+}
+
+.c-header__languages-section {
+  font-size header-language-size
+  float right
+}
+
+.c-header__icon,
+.c-header__language {
+  padding-left 5px
+  padding-right 5px
+
+  &:first-child {
+    padding-left 0
+  }
+
+  &:last-child {
+    padding-right 0
+  }
+}
+
+.c-header__icon--contact {
+  font-size header-contact-icon-size
+  color header-contact-icon-color
+}
+
+.c-header__element--active-language {
+  text-decoration underline
 }
 
 .c-header__link {
@@ -25,38 +71,8 @@ header-language-size = 14px
   }
 }
 
-.c-header__element {
-  display inline-block
-  line-height header-height
-  padding-left 5px
-  padding-right 5px
-
-  &:first-child {
-    padding-left 0
-  }
-
-  &:last-child {
-    padding-right 0
-  }
-}
-
-.c-header__element--contact-icon {
-  font-size header-contact-icon-size
-  color header-contact-icon-color
-}
-
-.c-header__element--social {
-  font-size header-social-icon-size
-
+.c-header__link--icon {
   &:hover {
     text-decoration none
   }
-}
-
-.c-header__language {
-  font-size header-language-size
-}
-
-.c-header__language--active {
-  text-decoration underline
 }

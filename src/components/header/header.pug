@@ -1,26 +1,23 @@
 mixin header
-    .c-header&attributes(attributes)
+    header.c-header&attributes(attributes)
         .container
             .row
-                .col-md-2
-                    i.c-header__element.c-header__element--contact-icon.fa.fa-phone
-                    span.c-header__element +7 915 191 77 07
-                .col-md-3
-                    a.c-header__element.c-header__link(href="mailto:circleplease@gmail.com" target="_top")
-                        i.c-header__element.c-header__element--contact-icon.fa.fa-envelope
+                .col-md-4
+                    span.c-header__phone-section
+                        i.c-header__icon.c-header__icon--contact.fa.fa-phone
+                        span +7 915 191 77 07
+                    a.c-header__email-section.c-header__link(href="mailto:circleplease@gmail.com" target="_top")
+                        i.c-header__icon.c-header__icon--contact.fa.fa-envelope
                         span circleplease@gmail.com
-                .col-md-3
-                    a.c-header__element.c-header__element--social.c-header__link(href="#")
-                        i.c-header__element.fa.fa-vk
-                    a.c-header__element.c-header__element--social.c-header__link(href="#")
-                        i.c-header__element.fa.fa-facebook
-                    a.c-header__element.c-header__element--social.c-header__link(href="#")
-                        i.c-header__element.fa.fa-twitter
-                    a.c-header__element.c-header__element--social.c-header__link(href="#")
-                        i.c-header__element.fa.fa-instagram
-                .col-md-3
-                    a.c-header__element.c-header__link(href="http://www.mospriroda.ru") www.mospriroda.ru
-                .col-md-1.c-header__languages
-                    a.c-header__element.c-header__language.c-header__link(href="#") EN
-                    span.c-header__language |
-                    span.c-header__element.c-header__language.c-header__language--active RU
+                .col-md-offset-1.col-md-2.c-header__social-section
+                    a.c-header__link.c-header__link--icon.c-header__icon.fa.fa-vk(href="#")
+                    a.c-header__link.c-header__link--icon.c-header__icon.fa.fa-facebook(href="#")
+                    a.c-header__link.c-header__link--icon.c-header__icon.fa.fa-twitter(href="#")
+                    a.c-header__link.c-header__link--icon.c-header__icon.fa.fa-instagram(href="#")
+                .col-md-offset-1.col-md-4
+                    span.c-header__partner-section
+                        a.c-header__link(href="http://www.mospriroda.ru") www.mospriroda.ru
+                    span.c-header__languages-section
+                        a.c-header__link.c-header__language(href="#") EN
+                        span |
+                        span.c-header__language.c-header__element--active-language RU
