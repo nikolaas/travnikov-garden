@@ -151,6 +151,10 @@ const common = {
             names: ['common', 'vendors'],
             minChunks: 2
         }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+        }),
         new SpritesmithPlugin({
             src: {
                 cwd: path.resolve(paths.src, 'resources', 'images'),
@@ -169,7 +173,7 @@ const common = {
             // Похоже что webpack использует возвожности, недоступные в IE 8
             // соответственно динамическая загрузка стилей не поддерживается,
             // поэтому для отладки в IE 8 нужно закомментировать эту строку
-            disable: !PRODUCTION_MODE
+            // disable: !PRODUCTION_MODE
         }),
         generatePage('index'),
         generatePage('about')
