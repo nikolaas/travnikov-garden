@@ -166,6 +166,9 @@ const common = {
         }),
         new ExtractTextWebpackPlugin({
             filename: `css/${hashedName('[name]', 'css', '[contenthash]')}`,
+            // Похоже что webpack использует возвожности, недоступные в IE 8
+            // соответственно динамическая загрузка стилей не поддерживается,
+            // поэтому для отладки в IE 8 нужно закомментировать эту строку
             disable: !PRODUCTION_MODE
         }),
         generatePage('index'),
