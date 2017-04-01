@@ -1,6 +1,11 @@
-@import '~sprite';
 @import '../../styles/colors.styl';
 @import '../../styles/mixins';
+
+/*
+ * Высота лого.
+ * Пока это самый простой способ выровнять меню по высоте относительно лого
+ */
+$logo_height = 137px;
 
 .c-navigation {
   padding-top 10px;
@@ -111,6 +116,5 @@
 }
 
 .c-navigation__logo-link {
-  sprite($logo);
   display inline-block
 }
