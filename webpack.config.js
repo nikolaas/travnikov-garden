@@ -40,9 +40,9 @@ const pugRule = {
     test: /\.pug$/,
     include: paths.src,
     use: [
-        'html-loader',
+        'apply-loader',
         {
-            loader: 'pug-html-loader',
+            loader: 'pug-loader',
             options: {pretty: true}
         }
     ]
@@ -67,7 +67,10 @@ const vendorsStylesRule = {
 //правила обработки стилей приложения
 const appStylesRule = {
     test: /\.styl/,
-    include: /src|generated_src/,
+    include: [
+        paths.src,
+        paths.generatedSrc
+    ],
     use: ExtractTextWebpackPlugin.extract({
         fallback: 'style-loader',
         use: [
@@ -109,12 +112,14 @@ const fontsRule = {
 //правила обработки шрифтов
 const imagesRule = {
     test: /\.png$/,
-    include: /src|generated_src/,
+    include: [
+        paths.src,
+        paths.generatedSrc
+    ],
     use: {
         loader: 'file-loader',
         options: {
-            name: '../images/[name].[ext]',
-            outputPath: 'images/'
+            name: 'images/[name].[ext]'
         }
     }
 };
