@@ -3,7 +3,8 @@
 
 /*
  * Высота лого.
- * Пока это самый простой способ выровнять меню по высоте относительно лого
+ * Пока это самый простой способ выровнять меню по высоте относительно лого.
+ * Поскольку голотип не лежит в спрайте, то его высоту пришлось захардкодить.
  */
 $logo_height = 137px;
 
@@ -14,63 +15,6 @@ $logo_height = 137px;
   color common-text-color
   font-family Georgia
   font-size 14px
-}
-
-.c-navigation__link {
-  animated();
-  text-transform uppercase
-  background-color common-background-color
-  color common-text-color
-  padding 10px 5px
-  white-space nowrap
-  position relative
-  z-index 2
-
-  &:active,
-  &:focus,
-  &:visited,
-  &:hover {
-    color common-text-color
-    text-decoration none
-  }
-}
-
-.c-navigation__link--popup-menu {
-  text-transform none
-  background-color transparent
-  color accent-text-color
-
-  &:focus,
-  &:visited,
-  &:active,
-  &:hover {
-      color accent-text-color
-  }
-}
-
-.c-navigation__popup-menu-item {
-  animated()
-  box-sizing border-box
-  padding 20px
-  text-align left
-  text-align-last auto
-  cursor pointer
-  background-color accent-background-color
-  color accent-text-color
-
-  &:hover {
-    background-color lighten(accent-background-color, 10%)
-  }
-}
-
-.c-navigation__popup-menu {
-  animated()
-  position absolute
-  top 100%
-  transform scaleY(0)
-  transform-origin left 0
-  list-style none
-  padding 0
 }
 
 .c-navigation__menu {
@@ -114,6 +58,10 @@ $logo_height = 137px;
   }
 }
 
+/**
+ * Класс предназначен для того, чтобы отметить элемент навигации,
+ * которому соответствует текущая открытая страница
+ */
 .c-navigation__menu-item--active {
   &::before {
     opacity 1
@@ -123,4 +71,23 @@ $logo_height = 137px;
 
 .c-navigation__logo {
   text-align center
+}
+
+.c-navigation__link {
+  animated();
+  text-transform uppercase
+  background-color common-background-color
+  color common-text-color
+  padding 10px 5px
+  white-space nowrap
+  position relative
+  z-index 2
+
+  &:active,
+  &:focus,
+  &:visited,
+  &:hover {
+    color common-text-color
+    text-decoration none
+  }
 }

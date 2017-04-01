@@ -1,3 +1,5 @@
+include ../popup-menu/popup-menu.pug
+
 mixin navigation
     nav.c-navigation
         .container
@@ -7,11 +9,10 @@ mixin navigation
                         a.c-navigation__link(href='/') Главная
                     li.c-navigation__menu-item.c-navigation__menu-item--active
                         a.c-navigation__link(href='/about.html') О саде
-                        ul.c-navigation__popup-menu
-                            li.c-navigation__popup-menu-item
-                                a.c-navigation__link.c-navigation__link--popup-menu(href='#') История сада
-                            li.c-navigation__popup-menu-item
-                                a.c-navigation__link.c-navigation__link--popup-menu(href='#') Юридическое положение
+                        +popup-menu([
+                            {title: 'История сада'},
+                            {title: 'Юридическое положение'},
+                        ])(class='c-navigation__popup-menu')
                     li.c-navigation__menu-item
                         a.c-navigation__link(href='/plants.html') Растения
                     li.c-navigation__menu-item

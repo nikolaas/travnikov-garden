@@ -1,0 +1,43 @@
+@import '../../styles/colors.styl';
+@import '../../styles/mixins.styl';
+
+.c-popup-menu {
+  animated()
+  position absolute
+  top 100%
+  transform scaleY(0)
+  transform-origin left 0
+  list-style none
+  padding 0
+}
+
+.c-popup-menu__item {
+  animated()
+  box-sizing border-box
+  padding 20px
+  text-align left
+  text-align-last auto
+  cursor pointer
+  background-color accent-background-color
+  color accent-text-color
+
+  &:hover {
+    background-color lighten(accent-background-color, 10%)
+  }
+}
+
+.c-popup-menu__link {
+  text-transform none
+  background-color transparent
+  color accent-text-color
+  padding 10px 5px
+  white-space nowrap
+
+  &:focus,
+  &:visited,
+  &:active,
+  &:hover {
+    color accent-text-color
+    text-decoration none
+  }
+}
