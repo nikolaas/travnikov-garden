@@ -1,8 +1,6 @@
 @import '~sprite';
-@import '../../styles/colors';
+@import '../../styles/colors.styl';
 @import '../../styles/mixins';
-
-navigation-items-count = 9;
 
 .c-navigation {
   padding-top 10px;
@@ -11,44 +9,6 @@ navigation-items-count = 9;
   color common-text-color
   font-family Georgia
   font-size 14px
-}
-
-.c-navigation__menu {
-  line-height $logo_height
-  text-align justify
-  text-align-last: justify;
-}
-
-//.c-navigation__sub-menu {
-//  animated()
-//  position absolute
-//  top 100%
-//  transform scaleY(0)
-//  transform-origin left 0
-//  background-color accent-background-color
-//  color accent-text-color
-//}
-
-.c-navigation__menu-item {
-  position relative
-  display inline-block
-  line-height normal
-  text-align center
-
-  //&:hover {
-  //  .c-navigation__sub-menu {
-  //    transform scaleY(1)
-  //  }
-  //}
-}
-
-.c-navigation__logo {
-  text-align center
-}
-
-.c-navigation__logo-link {
-  sprite($logo);
-  display inline-block
 }
 
 .c-navigation__link {
@@ -65,25 +25,92 @@ navigation-items-count = 9;
 
   &:active,
   &:hover {
-    background-color accent-background-color
     color accent-text-color
     text-decoration none
   }
 }
 
-//.c-navigation__sub-menu-link {
-//  color accent-text-color
-//  padding 10px 5%
-//
-//  &:focus,
-//  &:visited {
-//    color accent-text-color
-//  }
-//
-//  &:active,
-//  &:hover {
-//    color accent-text-color
-//    text-decoration none
-//  }
-//
-//}
+.c-navigation__link--popup-menu {
+  text-transform none
+  color accent-text-color
+
+  &:focus,
+  &:visited {
+    color accent-text-color
+  }
+
+  &:active,
+  &:hover {
+    color accent-text-color
+  }
+}
+
+.c-navigation__sub-menu-item {
+  box-sizing border-box
+  padding-top 10px
+  padding-bottom 10px
+  text-align left
+  text-align-last auto
+}
+
+.c-navigation__sub-menu {
+  box-sizing border-box
+  list-style none
+  padding-left 10px
+}
+
+.c-navigation__popup-menu-item {
+  box-sizing border-box
+  padding-top 10px
+  text-align left
+  text-align-last auto
+}
+
+.c-navigation__popup-menu {
+  animated()
+  position absolute
+  top 100%
+  transform scaleY(0)
+  transform-origin left 0
+  background-color accent-background-color
+  color accent-text-color
+  list-style none
+  padding 0
+}
+
+.c-navigation__menu {
+  line-height $logo_height
+  text-align justify
+  text-align-last: justify;
+}
+
+.c-navigation__menu-item {
+  position relative
+  display inline-block
+  line-height normal
+  text-align center
+  padding-top 10px
+  padding-bottom 10px
+
+  &:hover {
+    background-color accent-background-color
+
+    .c-navigation__link {
+      color accent-text-color
+      text-decoration none
+    }
+
+    .c-navigation__popup-menu {
+      transform scaleY(1)
+    }
+  }
+}
+
+.c-navigation__logo {
+  text-align center
+}
+
+.c-navigation__logo-link {
+  sprite($logo);
+  display inline-block
+}
