@@ -13,18 +13,18 @@
   text-align left
   text-align-last auto
   cursor pointer
-  background-color accent-background-color
-  color accent-text-color
+  background-color $accent-background-color
+  color $accent-text-color
 
   &:hover {
-    background-color lighten(accent-background-color, 10%)
+    background-color lighten($accent-background-color, 10%)
   }
 }
 
 .c-popup-menu__link {
   text-transform none
   background-color transparent
-  color accent-text-color
+  color $accent-text-color
   padding 10px 5px
   white-space nowrap
 
@@ -32,7 +32,7 @@
   &:visited,
   &:active,
   &:hover {
-    color accent-text-color
+    color $accent-text-color
     text-decoration none
   }
 }
