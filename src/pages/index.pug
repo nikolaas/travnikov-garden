@@ -2,6 +2,8 @@ include ../components/header/header.pug
 include ../components/navigation/navigation.pug
 include ../components/slider/slider.pug
 
+- var pageData = require('./index.data').default;
+
 doctype html
 html
     head
@@ -17,4 +19,4 @@ html
         <![endif]-->
         +header
         +navigation
-        +slider()(id='main-slider')
+        +slider(pageData.sliderItems)(id='main-slider')

@@ -1,25 +1,15 @@
-mixin slider
+mixin slider(items)
     .carousel.slide(data-ride="carousel")&attributes(attributes)
         ol.carousel-indicators
-            li.active(data-target='#' + attributes.id data-slide-to="0")
-            li(data-target='#' + attributes.id data-slide-to="1")
-            li(data-target='#' + attributes.id data-slide-to="2")
+            each item, index in items
+                li.active(class=index == 0 ? 'active' : '' data-target='#' + attributes.id data-slide-to=index)
         .carousel-inner(role="listbox")
-            .item.active
-                img.d-block.img-fluid(src=require('../resources/indi-images/slide1.png') alt="First slide")
-                .carousel-caption.d-none.d-md-block
-                    h3 First slide
-                    p First slide description
-            .item
-                img.d-block.img-fluid(src=require('../resources/indi-images/slide2.png') alt="Second slide")
-                .carousel-caption.d-none.d-md-block
-                    h3 Second slide
-                    p Second slide description
-            .item
-                img.d-block.img-fluid(src=require('../resources/indi-images/slide3.png') alt="Third slide")
-                .carousel-caption.d-none.d-md-block
-                    h3 Third slide
-                    p Third slide description
+            each item, index in items
+                div(class=index == 0 ? 'item active' : 'item')
+                    img.d-block.img-fluid(src=item.src alt=item.title)
+                    .carousel-caption.d-none.d-md-block
+                        h3= item.title
+                        p= item.description
         a.left.carousel-control(href='#' + attributes.id role="button" data-slide="prev")
             span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
             span.sr-only Previous
