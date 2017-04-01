@@ -5,33 +5,19 @@ mixin navigation
                 ul.col-md-5.col-xs-12.c-navigation__menu
                     li.c-navigation__menu-item
                         a.c-navigation__link(href='/') Главная
-                    li.c-navigation__menu-item
+                    li.c-navigation__menu-item.c-navigation__menu-item--active
                         a.c-navigation__link(href='/about.html') О саде
                         ul.c-navigation__popup-menu
                             li.c-navigation__popup-menu-item
                                 a.c-navigation__link.c-navigation__link--popup-menu(href='#') История сада
-                                ul.c-navigation__sub-menu
-                                    li.c-navigation__sub-menu-item
-                                        a.c-navigation__link.c-navigation__link--popup-menu(href='#') Об основателе
-                                    li.c-navigation__sub-menu-item
-                                        a.c-navigation__link.c-navigation__link--popup-menu(href='#') О Н.И. Романовой
-                                    li.c-navigation__sub-menu-item
-                                        a.c-navigation__link.c-navigation__link--popup-menu(href='#') Возврождение
                             li.c-navigation__popup-menu-item
                                 a.c-navigation__link.c-navigation__link--popup-menu(href='#') Юридическое положение
-                                ul.c-navigation__sub-menu
-                                    li.c-navigation__sub-menu-item
-                                        a.c-navigation__link.c-navigation__link--popup-menu(href='#') Паспорт 1989
-                                    li.c-navigation__sub-menu-item
-                                        a.c-navigation__link.c-navigation__link--popup-menu(href='#') Основание придания статуса ООПТ
-                                    li.c-navigation__sub-menu-item
-                                        a.c-navigation__link.c-navigation__link--popup-menu(href='#') Паспорт 2016
                     li.c-navigation__menu-item
                         a.c-navigation__link(href='/plants.html') Растения
                     li.c-navigation__menu-item
                         a.c-navigation__link(href='/gallery.html') Фотогалерея
                 .col-md-2.c-navigation__logo
-                    a.c-navigation__logo-link(href='/')
+                    a(href='/')
                         img(src=require('../resources/indi-images/logo.png'))
                 ul.col-md-5.col-xs-12.c-navigation__menu
                     li.c-navigation__menu-item

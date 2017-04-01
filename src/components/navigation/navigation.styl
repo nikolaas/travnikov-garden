@@ -1,5 +1,5 @@
 @import '../../styles/colors.styl';
-@import '../../styles/mixins';
+@import '../../styles/mixins.styl';
 
 /*
  * Высота лого.
@@ -19,56 +19,48 @@ $logo_height = 137px;
 .c-navigation__link {
   animated();
   text-transform uppercase
+  background-color common-background-color
   color common-text-color
   padding 10px 5px
   white-space nowrap
-
-  &:focus,
-  &:visited {
-    color common-text-color
-  }
+  position relative
+  z-index 2
 
   &:active,
+  &:focus,
+  &:visited,
   &:hover {
-    color accent-text-color
+    color common-text-color
     text-decoration none
   }
 }
 
 .c-navigation__link--popup-menu {
   text-transform none
+  background-color transparent
   color accent-text-color
 
   &:focus,
-  &:visited {
-    color accent-text-color
-  }
-
+  &:visited,
   &:active,
   &:hover {
-    color accent-text-color
+      color accent-text-color
   }
-}
-
-.c-navigation__sub-menu-item {
-  box-sizing border-box
-  padding-top 10px
-  padding-bottom 10px
-  text-align left
-  text-align-last auto
-}
-
-.c-navigation__sub-menu {
-  box-sizing border-box
-  list-style none
-  padding-left 10px
 }
 
 .c-navigation__popup-menu-item {
+  animated()
   box-sizing border-box
-  padding-top 10px
+  padding 20px
   text-align left
   text-align-last auto
+  cursor pointer
+  background-color accent-background-color
+  color accent-text-color
+
+  &:hover {
+    background-color lighten(accent-background-color, 10%)
+  }
 }
 
 .c-navigation__popup-menu {
@@ -77,8 +69,6 @@ $logo_height = 137px;
   top 100%
   transform scaleY(0)
   transform-origin left 0
-  background-color accent-background-color
-  color accent-text-color
   list-style none
   padding 0
 }
@@ -94,15 +84,28 @@ $logo_height = 137px;
   display inline-block
   line-height normal
   text-align center
-  padding-top 10px
-  padding-bottom 10px
+  padding-top 35px
+  padding-bottom 35px
+
+  &::before {
+    animated();
+    content ''
+    display block
+    position: absolute;
+    width 1px
+    left 50%
+    top 0
+    bottom  0
+    opacity 0
+    transform: rotate(-30grad);
+    border-left 1px solid
+    z-index 1
+  }
 
   &:hover {
-    background-color accent-background-color
-
-    .c-navigation__link {
-      color accent-text-color
-      text-decoration none
+    &::before {
+      opacity 1
+      transform: rotate(30grad);
     }
 
     .c-navigation__popup-menu {
@@ -111,10 +114,13 @@ $logo_height = 137px;
   }
 }
 
-.c-navigation__logo {
-  text-align center
+.c-navigation__menu-item--active {
+  &::before {
+    opacity 1
+    transform: rotate(30grad);
+  }
 }
 
-.c-navigation__logo-link {
-  display inline-block
+.c-navigation__logo {
+  text-align center
 }
