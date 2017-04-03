@@ -1,0 +1,121 @@
+@import '../../styles/colors.styl';
+
+$content-text-color = #301f0d
+
+.c-news {
+  padding 70px 0
+}
+
+.c-news__section-icon-container {
+  text-align center
+}
+
+.c-news__section-icon {
+  display inline-block
+  padding 0 25px
+  position relative
+  font-size 48px
+  color: $common-text-color
+
+  &::before,
+  &::after {
+    content ''
+    display block
+    width 55px
+    border-top 2px solid $common-border-color
+    position absolute
+    top 50%
+    transform translateY(-50%)
+  }
+
+  &::before {
+    left -55px
+  }
+
+  &::after {
+    right -55px
+  }
+}
+
+.c-news__section-title {
+  font-size 36px
+  color: $common-text-color
+  text-transform uppercase
+  text-align center
+}
+
+.c-news__list {
+  /*
+   * для браузеров неподдерживающих флексбокс сработает скрипт,
+   * который явно установит блокам одинаковую высоту
+   */
+  display flex
+  align-items stretch
+  margin 50px 0
+}
+
+.c-news__new {
+  display block
+  height 100%
+  position relative
+  text-align center
+  border 1px solid $minor-border-color
+  border-bottom 2px solid $common-border-color
+  padding-bottom 16px
+}
+
+.c-news__new-image {
+  width 360px
+  height: 260px
+}
+
+.c-news__new-title {
+  display block
+  outline none
+  margin-top 25px
+  font-family 'Georgia'
+  font-size 24px
+  color: $common-text-color
+  text-decoration underline
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: $common-text-color
+  }
+}
+
+.c-news__new-content {
+  font-family 'Open Sans'
+  font-size 16px
+  line-height 32px
+  color: $content-text-color
+  text-decoration none
+}
+
+.c-news__new-date {
+  position absolute
+  top 0
+  left 0
+  width 70px
+  height 80px
+  font-family 'Georgia'
+  color: $common-text-color
+  background-color $common-background-color
+}
+
+.c-news__new-day {
+  font-size 30px
+}
+
+.c-news__new-month {
+  font-size 16px
+}
+
+.c-news__more-button-container {
+  text-align center
+
+  .btn {
+    display inline-block
+  }
+}

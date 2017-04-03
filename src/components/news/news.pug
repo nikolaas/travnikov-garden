@@ -1,0 +1,21 @@
+mixin news(items)
+    .container.c-news
+        .row
+            .c-news__section-icon-container
+                .c-news__section-icon
+                    i.fa.fa-newspaper-o
+        .row
+            .c-news__section-title
+                span Последние новости
+        .row.c-news__list
+            each item in items
+                .col-md-4
+                    .c-news__new
+                        img.c-news__new-image(src=item.image, alt=item.title)
+                        a.c-news__new-title(href='#')= item.title
+                        .c-news__new-content= item.shortContent
+                        .c-news__new-date
+                            .c-news__new-day= item.day
+                            .c-news__new-month= item.month
+        .row.c-news__more-button-container
+            button.btn.btn-default Больше новостей

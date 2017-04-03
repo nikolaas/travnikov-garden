@@ -150,7 +150,7 @@ const common = {
         modules: ['node_modules', 'generated_src']
     },
     plugins: [
-        new CleanWebpackPlugin([paths.dist, paths.generatedSrc], {root: __dirname}),
+        new CleanWebpackPlugin([paths.dist], {root: __dirname}),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['common', 'vendors'],
