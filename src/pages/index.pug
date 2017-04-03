@@ -2,6 +2,7 @@ include ../components/header/header.pug
 include ../components/navigation/navigation.pug
 include ../components/slider/slider.pug
 include ../components/news/news.pug
+include ../components/news-subcscription/news-subcscription.pug
 
 - var pageData = require('./index.data').default;
 
@@ -22,3 +23,4 @@ html
         +navigation
         +slider(pageData.sliderItems)(id='main-slider')
         +news(pageData.newsItems)
+        +news-subcscription

@@ -1,0 +1,14 @@
+mixin news-subcscription
+    .c-news-subscription
+        .container
+            .row
+                .c-news-subscription__section-title-container
+                    .c-news-subscription__section-title Подписка на новости
+            .row
+                form.c-news-subscription__subscription-form
+                    .col-md-6
+                        span.c-news-subscription__subscription-label Чтобы быть в курсе последних событий, подпишитесь на новости:
+                    .col-md-4
+                        input.form-control.c-news-subscription__subscription-email(type='email' placeholder='Введите Ваш e-mail...')
+                    .col-md-2
+                        button.btn.btn-accent.c-news-subscription__subscribe_button Подписаться
