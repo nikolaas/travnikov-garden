@@ -1,18 +1,21 @@
 mixin slider(items)
-    .carousel.slide(data-ride="carousel")&attributes(attributes)
+    .carousel.slide.carousel-fade(data-ride="carousel")&attributes(attributes)
         ol.carousel-indicators
             each item, index in items
-                li.active(class=index == 0 ? 'active' : '' data-target='#' + attributes.id data-slide-to=index)
+                li(class=index == 0 ? 'active' : '' data-target='#' + attributes.id data-slide-to=index)
         .carousel-inner(role="listbox")
             each item, index in items
                 div(class=index == 0 ? 'item active' : 'item')
                     img.d-block.img-fluid(src=item.src alt=item.title)
-                    .carousel-caption.d-none.d-md-block
-                        h3= item.title
-                        p= item.description
+                    .container.carousel-item
+                        .row
+                            .col-md-6
+                                .carousel__item-title= item.title
+                                .carousel__item-description= item.description
+                                a.btn.btn-default.carousel__item-more(href='#') Подробнее
         a.left.carousel-control(href='#' + attributes.id role="button" data-slide="prev")
-            span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+            span.carousel-control__chevron.fa.fa-angle-left(aria-hidden="true")
             span.sr-only Previous
         a.right.carousel-control(href='#' + attributes.id role="button" data-slide="next")
-            span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+            span.carousel-control__chevron.fa.fa-angle-right(aria-hidden="true")
             span.sr-only Next

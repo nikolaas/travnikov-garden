@@ -1,0 +1,32 @@
+@import './colors.styl'
+
+.btn {
+  border none
+  border-radius 0
+  padding 15px 30px
+}
+
+.btn-default {
+  background-color $accent-background-color
+  color $accent-text-color
+  font-size 16px
+
+  &:focus {
+    background-color $accent-background-color
+    color $accent-text-color
+    outline none
+  }
+
+  &:hover {
+    background-color lighten($accent-background-color, 10%)
+    color $accent-text-color
+  }
+
+  &:active
+  &:active:focus,
+  &:active:hover {
+    background-color lighten($accent-background-color, 20%)
+    color $accent-text-color
+    outline none
+  }
+}

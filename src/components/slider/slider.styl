@@ -1,0 +1,108 @@
+@import '../../styles/colors.styl';
+
+/**
+ * Стиль для стрелочек-переключателей слайдов
+ */
+.carousel-control__chevron {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size 24px
+  /**
+   * font-size(24px) + padding-top(5px) + padding-bottom(5px) = 34px - это у нас получились верхняя и нижняя границы
+   * чтобы получился квадрат нужно чтобы по ширине элемент тоже был 34px. Ширина символа при данном размере текста
+   * равно примерно 8px
+   * (34px - 8px) / 2 = 14px - горизонтальные паддинги
+   *
+   * Почему не сделал через фиксированные width и height? не получилось выровнять символ по середине
+   */
+  padding: 5px 14px;
+  color: $common-text-color
+  border: 1px solid $common-border-color;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-control {
+    max-width 5%
+
+    &.left {
+      .carousel-control__chevron {
+        right 0
+      }
+    }
+    &.right {
+      .carousel-control__chevron {
+        left 0
+      }
+    }
+  }
+}
+
+/**
+ * Кастомизация стиля индикаторов слайдов
+ */
+.carousel-indicators {
+  .active {
+    background-color: $accent-background-color
+    border-color: $accent-background-color
+  }
+}
+
+/**
+ * Стили для текста с описанием слайда
+ */
+.carousel-item {
+  position absolute
+  top 0
+  left 50%
+  transform translateX(-50%)
+  color $accent-text-color
+  z-index 30
+}
+
+.carousel__item-title {
+  margin-top 140px
+  font-family 'Georgia'
+  font-size 48px
+  text-transform uppercase
+}
+
+.carousel__item-description {
+  margin-top 20px
+  font-size 18px
+}
+
+.carousel__item-more {
+  margin-top 20px
+}
+
+/**
+ * Fade-in, fade-out эффект для смены элементов слайдера
+ */
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      transition-property: opacity;
+    }
+
+    .item,
+    .active.left,
+    .active.right {
+      opacity: 0;
+    }
+
+    .active,
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+
+    .next,
+    .prev,
+    .active.left,
+    .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

@@ -5,18 +5,18 @@ import slide3 from '../resources/indi-images/slide3.png';
 const sliderItems = [
     {
         src: slide1,
-        title: 'First slide',
-        description: 'First slide description'
+        title: 'Ботанический сад П. И. Травникова',
+        description: 'Основан 1957-1958 гг. на Фрунзенской набережной Павлом Ивановичем Травниковым'
     },
     {
         src: slide2,
-        title: 'Second slide',
-        description: 'Second slide description'
+        title: 'Ботанический сад П. И. Травникова',
+        description: 'Основан 1957-1958 гг. на Фрунзенской набережной Павлом Ивановичем Травниковым'
     },
     {
         src: slide3,
-        title: 'Third slide',
-        description: 'Third slide description'
+        title: 'Ботанический сад П. И. Травникова',
+        description: 'Основан 1957-1958 гг. на Фрунзенской набережной Павлом Ивановичем Травниковым'
     }
 ];
 
