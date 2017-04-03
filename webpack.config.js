@@ -104,8 +104,9 @@ const fontsRule = {
     use: {
         loader: 'file-loader',
         options: {
-            name: '../fonts/[name].[ext]',
-            outputPath: 'fonts/'
+            name: '[name].[ext]',
+            outputPath: 'fonts/',
+            publicPath: '../fonts/'
         }
     }
 };
@@ -119,7 +120,9 @@ const imagesRule = {
     use: {
         loader: 'file-loader',
         options: {
-            name: 'images/[name].[ext]'
+            name: '[name].[ext]',
+            outputPath: 'images/',
+            publicPath: '../images/'
         }
     }
 };
