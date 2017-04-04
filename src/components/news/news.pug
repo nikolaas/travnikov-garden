@@ -1,12 +1,8 @@
+include ../main-section-title/main-section-title.pug
+
 mixin news(items)
     .container.c-news
-        .row
-            .c-news__section-icon-container
-                .c-news__section-icon
-                    i.fa.fa-newspaper-o
-        .row
-            .c-news__section-title
-                span Последние новости
+        +main-section-title('Последние новости', 'fa fa-newspaper-o')
         .row.c-news__list
             each item in items
                 .col-md-4

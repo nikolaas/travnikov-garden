@@ -6,44 +6,6 @@ $content-text-color = #301f0d
   padding 70px 0
 }
 
-.c-news__section-icon-container {
-  text-align center
-}
-
-.c-news__section-icon {
-  display inline-block
-  padding 0 25px
-  position relative
-  font-size 48px
-  color: $common-text-color
-
-  &::before,
-  &::after {
-    content ''
-    display block
-    width 55px
-    border-top 2px solid $common-border-color
-    position absolute
-    top 50%
-    transform translateY(-50%)
-  }
-
-  &::before {
-    left -55px
-  }
-
-  &::after {
-    right -55px
-  }
-}
-
-.c-news__section-title {
-  font-size 36px
-  color: $common-text-color
-  text-transform uppercase
-  text-align center
-}
-
 .c-news__list {
   /*
    * для браузеров неподдерживающих флексбокс сработает скрипт,

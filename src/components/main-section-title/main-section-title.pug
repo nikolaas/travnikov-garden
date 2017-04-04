@@ -1,0 +1,10 @@
+mixin main-section-title(title, icon)
+    .c-main-section-title
+        if icon
+            .row
+                .c-main-section-title__icon-container
+                    .c-main-section-title__icon
+                        i(class=icon)
+        .row
+            .c-main-section-title__text
+                span= title
