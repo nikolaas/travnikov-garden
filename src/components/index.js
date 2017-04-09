@@ -5,3 +5,4 @@ import './popup-menu';
 import './slider';
 import './news';
 import './news-subcscription';
+import './garden-about';

@@ -1,0 +1,43 @@
+include ../main-section-title/main-section-title.pug
+
+mixin garder-about
+    .container.c-garden-about
+        +main-section-title('О саде', 'c-garden-about__section-icon')
+        .row.c-garden-about__content
+            p.
+                Сад П.И.Травникова - ценнейший объект культурного и экологического наследия Москвы, единственная
+                сохранившаяся ООПТ (особо охраняемая природная территория) в ЦАО. Сад создавался в 1957-58 годах,
+                и за время своего существования вместе со своим создателем Павлом Ивановичем Травниковым был удостоен
+                грамот, медалей и признания, в 1989 году получил статус памятника природы, созданного руками человека.
+                Сразу выяснилось, что сад пребывает в запустении и женщину, ранее за ним ухаживающую, не видели уже
+                больше года…
+        .row.c-garden-about__statistics
+            .col-md-3.c-garden-about__statistics-item
+                .c-garden-about__statistics-icon-container
+                    span.c-garden-about__statistics-icon.c-garden-about__statistics-icon--plants
+                .c-garden-about__statistics-count
+                    .c-garden-about__statistics-count-value 6
+                    .c-garden-about__statistics-count-label Видов
+                .c-garden-about__statistics-units
+                    span Голосеменных растений
+            .col-md-3.c-garden-about__statistics-item
+                .c-garden-about__statistics-icon-container
+                    span.c-garden-about__statistics-icon.c-garden-about__statistics-icon--trees
+                .c-garden-about__statistics-count
+                    .c-garden-about__statistics-count-value 10
+                    .c-garden-about__statistics-count-label Видов
+                .c-garden-about__statistics-units Деревьев
+            .col-md-3.c-garden-about__statistics-item
+                .c-garden-about__statistics-icon-container
+                    span.c-garden-about__statistics-icon.c-garden-about__statistics-icon--shrubs
+                .c-garden-about__statistics-count
+                    .c-garden-about__statistics-count-value 21
+                    .c-garden-about__statistics-count-label Вид
+                .c-garden-about__statistics-units Кустарников
+            .col-md-3.c-garden-about__statistics-item
+                .c-garden-about__statistics-icon-container
+                    span.c-garden-about__statistics-icon.c-garden-about__statistics-icon--herbs
+                .c-garden-about__statistics-count
+                    .c-garden-about__statistics-count-value 80
+                    .c-garden-about__statistics-count-label Видов
+                .c-garden-about__statistics-units Трав
