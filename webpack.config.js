@@ -1,17 +1,16 @@
-const activateProfile = require('./libs/activate-profile');
-const activeProfile = activateProfile(process.env.npm_lifecycle_event, 'production');
-const PRODUCTION_MODE = activeProfile.isProduction();
 const path = require('path');
 const merge = require('webpack-merge');
-const findImports = require('find-imports');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const createPageGenerator = require('./libs/create-page-generator');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
 const autoprefixer = require('autoprefixer');
-const createFileNameGenerator = require('./libs/create-file-name-generator');
-const hashedName = createFileNameGenerator(PRODUCTION_MODE);
+const vendors = require('./vendors');
+
+const NODE_ENV = process.env.NODE_ENV || 'production';
+const PRODUCTION_MODE = NODE_ENV === 'production';
+const MINIMIZE = process.env.MINIMIZE != null ? process.env.MINIMIZE === 'true' : PRODUCTION_MODE;
 
 const paths = {
     src: path.resolve(__dirname, 'src'),
@@ -21,8 +20,6 @@ const paths = {
 };
 
 const generatePage = createPageGenerator(paths.pages);
-
-const dependencies = findImports('src/**/*.js', { flatten: true });
 
 //правила обработки js
 const jsRule = {
@@ -57,7 +54,7 @@ const vendorsStylesRule = {
             {
                 loader: 'css-loader',
                 options: {
-                    minimize: PRODUCTION_MODE,
+                    minimize: MINIMIZE,
                     sourceMap: true
                 }
             }
@@ -77,7 +74,7 @@ const appStylesRule = {
             {
                 loader: 'css-loader',
                 options: {
-                    minimize: PRODUCTION_MODE,
+                    minimize: MINIMIZE,
                     sourceMap: true
                 }
             },
@@ -104,7 +101,7 @@ const fontsRule = {
     use: {
         loader: 'file-loader',
         options: {
-            name: '[name].[ext]',
+            name: '[name].[ext]?hash=[hash]',
             outputPath: 'fonts/',
             publicPath: '../fonts/'
         }
@@ -120,7 +117,7 @@ const imagesRule = {
     use: {
         loader: 'file-loader',
         options: {
-            name: '[name].[ext]',
+            name: '[name].[ext]?hash=[hash]',
             outputPath: 'images/',
             publicPath: '../images/'
         }
@@ -129,13 +126,13 @@ const imagesRule = {
 
 const common = {
     entry: {
-        vendors: dependencies,
+        vendors: vendors,
         common: path.resolve(paths.pages, 'common'),
         index: path.resolve(paths.pages, 'index'),
         about: path.resolve(paths.pages, 'about')
     },
     output: {
-        filename: `js/${hashedName('[name]', 'js', '[chunkhash]', '[hash]')}`,
+        filename: 'js/[name].js?hash=[hash]',
         path: paths.dist
     },
     module: {
@@ -177,7 +174,7 @@ const common = {
             }
         }),
         new ExtractTextWebpackPlugin({
-            filename: `css/${hashedName('[name]', 'css', '[contenthash]')}`,
+            filename: 'css/[name].css?path=[contenthash]',
             // Похоже что webpack использует возвожности, недоступные в IE 8
             // соответственно динамическая загрузка стилей не поддерживается,
             // поэтому для отладки в IE 8 нужно закомментировать эту строку
@@ -191,7 +188,7 @@ const common = {
 
 const production = {
     plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
+        ...uglifyJsPlugin()
     ]
 };
 
@@ -207,7 +204,7 @@ const development = {
 };
 
 let config;
-switch(activeProfile.name) {
+switch(NODE_ENV) {
     case 'production': {
         config = merge(common, production);
         break;
@@ -219,3 +216,12 @@ switch(activeProfile.name) {
 }
 
 module.exports = config;
+
+function uglifyJsPlugin() {
+    const plugins = [];
+    if (MINIMIZE) {
+        console.log('!!!!');
+        plugins.push(new webpack.optimize.UglifyJsPlugin());
+    }
+    return plugins
+}

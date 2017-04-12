@@ -1,4 +1,5 @@
 include ../main-section-title/main-section-title.pug
+include ../live-counter/live-counter.pug
 
 mixin garder-about
     .container.c-garden-about
@@ -16,7 +17,7 @@ mixin garder-about
                 .c-garden-about__statistics-icon-container
                     span.c-garden-about__statistics-icon.c-garden-about__statistics-icon--plants
                 .c-garden-about__statistics-count
-                    .c-garden-about__statistics-count-value 6
+                    +live-counter(6)(class='c-garden-about__statistics-count-value')
                     .c-garden-about__statistics-count-label Видов
                 .c-garden-about__statistics-units
                     span Голосеменных растений
@@ -24,20 +25,20 @@ mixin garder-about
                 .c-garden-about__statistics-icon-container
                     span.c-garden-about__statistics-icon.c-garden-about__statistics-icon--trees
                 .c-garden-about__statistics-count
-                    .c-garden-about__statistics-count-value 10
+                    +live-counter(10)(class='c-garden-about__statistics-count-value')
                     .c-garden-about__statistics-count-label Видов
                 .c-garden-about__statistics-units Деревьев
             .col-md-3.c-garden-about__statistics-item
                 .c-garden-about__statistics-icon-container
                     span.c-garden-about__statistics-icon.c-garden-about__statistics-icon--shrubs
                 .c-garden-about__statistics-count
-                    .c-garden-about__statistics-count-value 21
+                    +live-counter(21)(class='c-garden-about__statistics-count-value')
                     .c-garden-about__statistics-count-label Вид
                 .c-garden-about__statistics-units Кустарников
             .col-md-3.c-garden-about__statistics-item
                 .c-garden-about__statistics-icon-container
                     span.c-garden-about__statistics-icon.c-garden-about__statistics-icon--herbs
                 .c-garden-about__statistics-count
-                    .c-garden-about__statistics-count-value 80
+                    +live-counter(80)(class='c-garden-about__statistics-count-value')
                     .c-garden-about__statistics-count-label Видов
                 .c-garden-about__statistics-units Трав

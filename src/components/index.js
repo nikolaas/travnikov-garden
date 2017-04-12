@@ -1,3 +1,4 @@
+import './live-counter';
 import './header';
 import './navigation';
 import './main-section-title';

@@ -3,7 +3,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
 // веднорные скрипты
+import 'modernizr';
 import 'jquery';
+import 'jquery.animate-number'
 import 'bootstrap/dist/js/bootstrap';
 
 import '../components';
