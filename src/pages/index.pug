@@ -5,6 +5,7 @@ include ../components/news/news.pug
 include ../components/news-subcscription/news-subcscription.pug
 include ../components/garden-about/garden-about.pug
 include ../components/ours-plants/ours-plants.pug
+include ../components/footer/footer.pug
 
 - var pageData = require('./index.data').default;
 
@@ -28,3 +29,4 @@ html
         +news-subcscription
         +garder-about
         +ours-plants(pageData.oursPlants)
+        +footer

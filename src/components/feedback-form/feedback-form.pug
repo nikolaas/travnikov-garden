@@ -1,0 +1,6 @@
+mixin feedback-form
+    form.feedback-form&attributes(attributes)
+        input.form-control.feedback-form__field(type='text' name='feedback-name' placeholder='Введите ваше имя...')
+        input.form-control.feedback-form__field(type='text' name='feedback-email' placeholder='Введите ваше e-mail...')
+        textarea.form-control.feedback-form__field(name='feedback-message' placeholder='Введите сообщение...')
+        button.btn.btn-default(type='submit') Отправить

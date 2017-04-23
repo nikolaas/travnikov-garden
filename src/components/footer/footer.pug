@@ -1,0 +1,75 @@
+include ../map/map.pug
+include ../feedback-form/feedback-form
+
+- var MAP_ID = require('../components/footer/footer.constants').MAP_ID;
+
+mixin footer
+    footer.footer
+        +map(class='footer__map' id=MAP_ID)
+        .container
+            .row.footer__contacts
+                .col-md-4.footer__contact
+                    .footer__contact-icon
+                        i.fa.fa-map-marker
+                    .footer__contact-body
+                        .footer__contact-title Наш адрес
+                        .footer__contact-content
+                            span.footer__contact-content-row 119021, Москва,
+                            span.footer__contact-content-row Фрунзенская наб., 8, владение 8
+                .col-md-4.footer__contact
+                    .footer__contact-icon
+                        i.fa.fa-phone
+                    .footer__contact-body
+                        .footer__contact-title Наш телефон
+                        .footer__contact-data
+                            span.footer__contact-content-row +7 915 191 77 07
+                .col-md-4.footer__contact
+                    .footer__contact-icon
+                        i.fa.fa-envelope
+                    .footer__contact-body
+                        .footer__contact-title Наш e-mail
+                        .footer__contact-data
+                            a.footer__contact-content-row(href="mailto:circleplease@gmail.com" target="_top") circleplease@gmail.com
+            .row.footer__info
+                .col-md-4
+                    .footer__info-title Информация
+                    .footer__info-content
+                        span Ботанический сад имени П.И. Травникова находится на балансе
+                        a.footer__link.footer__link--mospriroda(href="http://www.mospriroda.ru") ГПБУ Мосприрода
+                    .footer__info-title Мы в социальных сетях:
+                    .footer__info-content.footer__social-links
+                        a.footer__social-link(href="#")
+                            i.fa.fa-vk
+                        a.footer__social-link(href="#")
+                            i.fa.fa-facebook(href="#")
+                        a.footer__social-link(href="#")
+                            i.fa.fa-twitter(href="#")
+                        a.footer__social-link(href="#")
+                            i.fa.fa-instagram(href="#")
+                .col-md-4
+                    .footer__info-title Меню
+                    ul.footer__info-content.footer__menu
+                        li
+                            a.footer__link(href="#") О саде
+                        li
+                            a.footer__link(href="#") Растения
+                        li
+                            a.footer__link(href="#") Фотогалерея
+                        li
+                            a.footer__link(href="#") Посетителям
+                        li
+                            a.footer__link(href="#") Сотрудничество
+                        li
+                            a.footer__link(href="#") Новости
+                        li
+                            a.footer__link(href="#") Контакты
+                .col-md-4
+                    .footer__feedback-form
+                        .footer__info-title Форма обратной связи
+                        +feedback-form
+        .footer__copyright
+            .container
+                .row
+                    .col-md-6.footer__copyright-data © 2017  Ботанический сад имени П.И. Травникова
+                    .col-md-6.footer__development Создание сайтов - infiway
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")

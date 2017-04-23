@@ -8,3 +8,6 @@ import './news';
 import './news-subcscription';
 import './garden-about';
 import './ours-plants';
+import './feedback-form';
+import './map';
+import './footer';
