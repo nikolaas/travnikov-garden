@@ -1,0 +1,32 @@
+@import '../../styles/colors.styl';
+@import '~sprite.styl';
+
+$gallery-width = 100%;
+$gallery-height = 450px;
+
+.c-ours-plants {
+  padding 70px 0
+}
+
+.c-ours-plants__section-icon {
+  sprite($ours_plants);
+  display block
+}
+
+.c-ours-plants__gallery {
+  margin-top 40px
+  height $gallery-height
+}
+
+.c-ours-plants__gallery-item {
+  width ($gallery-width / 6)
+  height ($gallery-height / 2)
+}
+
+.c-ours-plants__gallery-item--w-2 {
+  width ($gallery-width / 3)
+}
+
+.c-ours-plants__gallery-item--h-2 {
+  height ($gallery-height)
+}

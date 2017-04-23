@@ -43,8 +43,10 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
+    "imagesloaded": "^4.1.1",
     "jquery": "^3.2.1",
     "jquery.animate-number": "0.0.14",
+    "masonry-layout": "^4.1.1",
     "normalize-css": "^2.3.1"
   }
 }

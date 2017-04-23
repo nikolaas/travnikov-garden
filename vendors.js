@@ -7,7 +7,9 @@ const vendorsJs = [
     'modernizr',
     'jquery',
     'jquery.animate-number',
-    'bootstrap/dist/js/bootstrap'
+    'bootstrap/dist/js/bootstrap',
+    'imagesloaded',
+    'masonry-layout'
 ];
 
 const vendors = [
