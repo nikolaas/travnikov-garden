@@ -8,7 +8,9 @@ const MASONRY_CONFIG = {
 };
 
 const gallery = $('.c-ours-plants__gallery');
-const masonry = new Masonry(gallery[0], MASONRY_CONFIG);
-imagesLoaded(gallery[0], () => {
-    masonry.layout();
-});
+if (gallery.length > 0) {
+    const masonry = new Masonry(gallery[0], MASONRY_CONFIG);
+    imagesLoaded(gallery[0], () => {
+        masonry.layout();
+    });
+}
