@@ -1,0 +1,50 @@
+@import '../../../styles/colors.styl';
+
+$social-size = 40px
+
+.sidebar-social {
+  font-size 18px
+}
+
+.sidebar-social__item {
+  display inline-block
+  width $social-size
+  height $social-size
+  border-radius 100%
+  margin-right 15px
+
+  &:last-child {
+    margin-right 0
+  }
+
+  &.sidebar-social__item--vk {
+      background-color #507299
+  }
+
+  &.sidebar-social__item--facebook {
+    background-color #3b5998
+  }
+
+  &.sidebar-social__item--twitter {
+    background-color #589442
+  }
+
+  &.sidebar-social__item--instagram {
+    background-color #da2e74
+  }
+}
+
+.sidebar-social__link {
+  display block
+  line-height $social-size
+  color $accent-text-color
+  text-align center
+
+  &:visited,
+  &:active,
+  &:hover {
+    color $accent-text-color
+    text-decoration none
+  }
+}
+
