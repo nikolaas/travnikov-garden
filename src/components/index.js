@@ -4,6 +4,7 @@ import './navigation';
 import './main-section-title';
 import './popup-menu';
 import './slider';
+import './breadcrumbs';
 import './sidebar-last-news';
 import './news';
 import './news-subcscription';
