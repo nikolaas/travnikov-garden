@@ -1,0 +1,73 @@
+@import '../../styles/colors.styl';
+@import '~sprite.styl';
+
+.c-garden-statistics {
+  overflow hidden
+}
+
+.c-garden-statistics__item {
+  text-align center
+}
+
+.c-garden-statistics__icon-container,
+.c-garden-statistics__count,
+.c-garden-statistics__units {
+  width 100%
+}
+
+.c-garden-statistics__icon {
+  display inline-block
+  position relative;
+  width 65px;
+  height 65px;
+  border 1px solid $common-border-color
+  border-radius 100%
+
+  &::after {
+    content ''
+    display block
+    position absolute
+    top 0
+    bottom 0
+    left 0
+    right 0
+    margin auto
+  }
+}
+
+.c-garden-statistics__icon--plants {
+  &::after {
+    sprite($stat_plants);
+  }
+}
+
+.c-garden-statistics__icon--trees {
+  &::after {
+    sprite($stat_trees);
+  }
+}
+
+.c-garden-statistics__icon--shrubs {
+  &::after {
+    sprite($stat_shrubs);
+  }
+}
+
+.c-garden-statistics__icon--herbs {
+  &::after {
+    sprite($stat_herbs);
+  }
+}
+
+.c-garden-statistics__count-value {
+  font-size 48px
+}
+
+.c-garden-statistics__count-label {
+  text-transform uppercase
+}
+
+.c-garden-statistics__units {
+  margin-top 10px
+  font-style italic
+}
