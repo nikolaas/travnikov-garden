@@ -1,5 +1,6 @@
 include sidebar-last-news/sidebar-last-news.pug
 include sidebar-menu/sidebar-menu.pug
+include sidebar-event-calender/sidebar-event-calender.pug
 
 mixin sidebar(data)
     .col-md-3
@@ -9,3 +10,6 @@ mixin sidebar(data)
         .sidebar-item
             h4.sidebar-item-title Последние новости
             +sidebar-last-news
+        .sidebar-item
+            h4.sidebar-item-title Календарь мероприятий
+            +sidebar-event-calender

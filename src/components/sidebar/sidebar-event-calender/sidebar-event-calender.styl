@@ -1,0 +1,112 @@
+@import '../../../styles/colors.styl';
+@import '~sprite.styl';
+
+$unselectable-calendar-day-color = #e2dad3;
+
+.sidebar-event-calender {
+
+}
+
+.sidebar-event-calender__calendar-container {
+  height 250px
+}
+
+.sidebar-event-calender__calendar {
+  .ui-datepicker-header {
+    height 40px
+    padding 0
+    background-color $accent-background-color
+    color $accent-text-color
+  }
+
+  .ui-datepicker-title {
+    line-height 40px
+  }
+
+  .ui-datepicker-prev {
+    top 50%
+    transform translateY(-50%)
+    left 0
+    cursor pointer
+
+    &::after {
+      sprite($calendar_left_arrow)
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+    }
+  }
+
+  .ui-datepicker-next {
+    top 50%
+    transform translateY(-50%)
+    right 0
+    cursor pointer
+
+    &::after {
+      sprite($calendar_right_arrow)
+      content ''
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+    }
+  }
+
+  .ui-datepicker {
+    thead {
+      th {
+        text-transform uppercase
+      }
+    }
+
+    td {
+      span,
+      a {
+        text-align center
+        color inherit
+
+        &:visited,
+        &:active,
+        &:hover {
+          color inherit
+        }
+      }
+    }
+
+    .ui-datepicker-unselectable {
+      color $unselectable-calendar-day-color
+    }
+
+    .ui-datepicker-today {
+      background-color $accent-background-color
+
+      a {
+        color $accent-text-color
+
+        &:visited,
+        &:active,
+        &:hover {
+          color $accent-text-color
+          text-decoration none
+        }
+      }
+    }
+  }
+}
+
+.sidebar-event-calender__more_events {
+  display block
+  color $common-text-color
+  text-decoration underline
+  font-size 14px
+  text-align center
+
+  &:visited,
+  &:active,
+  &:hover {
+    color $common-text-color
+  }
+}
