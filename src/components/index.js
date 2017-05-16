@@ -4,6 +4,7 @@ import './navigation';
 import './main-section-title';
 import './popup-menu';
 import './slider';
+import './sidebar-last-news';
 import './news';
 import './news-subcscription';
 import './garden-about';

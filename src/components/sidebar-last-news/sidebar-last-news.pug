@@ -1,0 +1,11 @@
+- var items = require('../components/sidebar-last-news/sidebar-last-news.data').default;
+
+mixin sidebar-last-news
+    .sidebar-last-news
+        each item in items
+            a.sidebar-last-news__news-item(href="")
+                .sidebar-last-news__news-photo-container
+                    img.sidebar-last-news__news-photo(src=item.image alt=item.alt)
+                .sidebar-last-news__news-content
+                    p.sidebar-last-news__news-short-text= item.shortText
+                    span.sidebar-last-news__news-date= item.date

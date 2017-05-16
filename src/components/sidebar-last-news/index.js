@@ -1,0 +1,1 @@
+import './sidebar-last-news.styl';

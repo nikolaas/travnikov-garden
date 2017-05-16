@@ -1,0 +1,41 @@
+@import '../../styles/colors.styl';
+
+$news-date-color = #8a8a8a;
+
+.sidebar-last-news__news-item {
+  display block
+  margin-bottom 25px
+  overflow hidden
+  color inherit
+
+  &:visited,
+  &:active,
+  &:hover {
+    text-decoration none;
+    color inherit
+  }
+}
+
+.sidebar-last-news__news-photo-container {
+  float left
+  width 70px
+}
+
+.sidebar-last-news__news-photo {
+  width 100%
+}
+
+.sidebar-last-news__news-content {
+  margin-left 85px
+  font-size 14px
+}
+
+.sidebar-last-news__news-short-text {
+  line-height 16px
+  margin-bottom 10px
+}
+
+.sidebar-last-news__news-date {
+  font-size 12px
+  color $news-date-color
+}
