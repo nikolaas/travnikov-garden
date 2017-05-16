@@ -6,7 +6,6 @@ import './popup-menu';
 import './slider';
 import './breadcrumbs';
 import './sidebar';
-import './sidebar-last-news';
 import './news';
 import './news-subcscription';
 import './garden-about';
