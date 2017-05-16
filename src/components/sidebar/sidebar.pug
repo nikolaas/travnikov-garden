@@ -4,7 +4,7 @@ include sidebar-event-calender/sidebar-event-calender.pug
 include sidebar-social/sidebar-social.pug
 
 mixin sidebar(data)
-    .col-md-3
+    .sidebar&attributes(attributes)
         .sidebar-item
             h4.sidebar-item-title=data.menu.title
             +sidebar-menu(data.menu.items)
