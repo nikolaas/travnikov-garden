@@ -1,0 +1,6 @@
+mixin sidebar-menu(items)
+    nav.sidebar-menu
+        ul.sidebar-menu__items
+            each item in items
+                li.sidebar-menu__item
+                    a.sidebar-menu__link(href=item.href)=item.name

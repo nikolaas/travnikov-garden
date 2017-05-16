@@ -1,0 +1,32 @@
+@import '../../../styles/colors.styl';
+
+$item-border-color = #dfdfdf;
+
+.sidebar-menu {
+
+}
+
+.sidebar-menu__items {
+  list-style none
+}
+
+.sidebar-menu__item {
+  padding 0
+  border-bottom 1px solid $item-border-color
+
+  &:last-child {
+    border-bottom none
+  }
+}
+
+.sidebar-menu__link {
+  display block
+  color inherit
+  line-height 40px
+
+  &:active,
+  &:hover {
+    text-decoration none
+    color $common-text-color
+  }
+}

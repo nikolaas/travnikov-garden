@@ -1,7 +1,11 @@
 include sidebar-last-news/sidebar-last-news.pug
+include sidebar-menu/sidebar-menu.pug
 
-mixin sidebar
+mixin sidebar(data)
     .col-md-3
+        .sidebar-item
+            h4.sidebar-item-title=data.menu.title
+            +sidebar-menu(data.menu.items)
         .sidebar-item
             h4.sidebar-item-title Последние новости
             +sidebar-last-news

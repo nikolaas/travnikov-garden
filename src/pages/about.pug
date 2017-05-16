@@ -1,5 +1,11 @@
 include ../components/header/header.pug
 include ../components/navigation/navigation.pug
+include ../components/breadcrumbs/breadcrumbs.pug
+include ../components/main-section-title/main-section-title.pug
+include ../components/sidebar/sidebar.pug
+include ../components/footer/footer.pug
+
+-var data = require('./about.data');
 
 doctype html
 html
@@ -12,3 +18,14 @@ html
     body.c-garden-page
         +header
         +navigation
+        .header-image
+        +breadcrumbs(data.breadcrumbs)
+        .main-section-title__page
+            .container
+                +main-section-title('О саде', 'c-garden-about__section-icon')
+        .content-inner-page
+            .container
+                .row
+                    .col-md-9
+                    +sidebar(data.sidebar)
+        +footer
