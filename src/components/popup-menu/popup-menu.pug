@@ -2,4 +2,4 @@ mixin popup-menu(items)
     ul.c-popup-menu&attributes(attributes)
         each item in items
             li.c-popup-menu__item
-                a.c-popup-menu__link(href='#')= item.title
+                a.c-popup-menu__link(href=item.href)= item.title

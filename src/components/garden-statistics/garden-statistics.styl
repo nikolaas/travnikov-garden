@@ -1,5 +1,4 @@
 @import '../../styles/colors.styl';
-@import '~sprite.styl';
 
 .c-garden-statistics {
   overflow hidden
@@ -32,30 +31,34 @@
     left 0
     right 0
     margin auto
+    width 20px
+    height 20px
+    background-repeat no-repeat
+    background-position center
   }
 }
 
 .c-garden-statistics__icon--plants {
   &::after {
-    sprite($stat_plants);
+    background-image url('../../resources/images/stat-plants.png')
   }
 }
 
 .c-garden-statistics__icon--trees {
   &::after {
-    sprite($stat_trees);
+    background-image url('../../resources/images/stat-trees.png')
   }
 }
 
 .c-garden-statistics__icon--shrubs {
   &::after {
-    sprite($stat_shrubs);
+    background-image url('../../resources/images/stat-shrubs.png')
   }
 }
 
 .c-garden-statistics__icon--herbs {
   &::after {
-    sprite($stat_herbs);
+    background-image url('../../resources/images/stat-herbs.png')
   }
 }
 

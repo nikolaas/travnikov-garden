@@ -6,26 +6,26 @@ mixin navigation
             .row
                 ul.col-md-5.col-xs-12.c-navigation__menu
                     li.c-navigation__menu-item
-                        a.c-navigation__link(href='/') Главная
+                        a.c-navigation__link(href='index.html') Главная
                     li.c-navigation__menu-item
-                        a.c-navigation__link(href='/about.html') О саде
+                        a.c-navigation__link(href='about.html') О саде
                         +popup-menu([
-                            {title: 'История сада'},
-                            {title: 'Юридическое положение'},
+                            {title: 'История сада', href: ''},
+                            {title: 'Юридическое положение', href: 'legal-position.html'},
                         ])(class='c-navigation__popup-menu')
                     li.c-navigation__menu-item
-                        a.c-navigation__link(href='/plants.html') Растения
+                        a.c-navigation__link(href='plants.html') Растения
                     li.c-navigation__menu-item
-                        a.c-navigation__link(href='/gallery.html') Фотогалерея
+                        a.c-navigation__link(href='gallery.html') Фотогалерея
                 .col-md-2.c-navigation__logo
                     a(href='/')
-                        img(src=require('../resources/indi-images/logo.png'))
+                        img(src=require('../resources/external-images/logo.png'))
                 ul.col-md-5.col-xs-12.c-navigation__menu
                     li.c-navigation__menu-item
-                        a.c-navigation__link(href='/visitors.html') Посетителям
+                        a.c-navigation__link(href='visitors.html') Посетителям
                     li.c-navigation__menu-item
-                        a.c-navigation__link(href='/news.html') Новости
+                        a.c-navigation__link(href='news.html') Новости
                     li.c-navigation__menu-item
-                        a.c-navigation__link(href='/partnership.html') Сотрудничество
+                        a.c-navigation__link(href='partnership.html') Сотрудничество
                     li.c-navigation__menu-item
-                        a.c-navigation__link(href='/contacts.html') Контакты
+                        a.c-navigation__link(href='contacts.html') Контакты

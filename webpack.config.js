@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const createPageGenerator = require('./libs/create-page-generator');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
-const SpritesmithPlugin = require('webpack-spritesmith');
 const autoprefixer = require('autoprefixer');
 const vendors = require('./vendors');
 
@@ -107,19 +106,35 @@ const fontsRule = {
         }
     }
 };
-//правила обработки шрифтов
+//правила обработки статических изображений сайта
 const imagesRule = {
     test: /\.(png|jpg)$/,
     include: [
-        paths.src,
+        path.resolve(paths.src, 'resources', 'images'),
         paths.generatedSrc
+    ],
+    use: {
+        loader: 'url-loader',
+        options: {
+            limit: 10000,
+            name: '[name].[ext]?hash=[hash]',
+            outputPath: 'images/',
+            publicPath: '../images/'
+        }
+    }
+};
+//правила обработки динамических изображений (которые должны в результате быть загружжены с хостинга)
+const externalImagesRule = {
+    test: /\.(png|jpg)$/,
+    include: [
+        path.resolve(paths.src, 'resources', 'external-images'),
     ],
     use: {
         loader: 'file-loader',
         options: {
             name: '[name].[ext]?hash=[hash]',
-            outputPath: 'images/',
-            publicPath: '../images/'
+            outputPath: 'external-images/',
+            publicPath: 'external-images/'
         }
     }
 };
@@ -143,7 +158,8 @@ const common = {
             vendorsStylesRule,
             appStylesRule,
             fontsRule,
-            imagesRule
+            imagesRule,
+            externalImagesRule
         ]
     },
     resolve: {
@@ -151,7 +167,6 @@ const common = {
         modules: ['node_modules', 'generated_src']
     },
     plugins: [
-        new CleanWebpackPlugin([paths.dist], {root: __dirname}),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['common', 'vendors'],
@@ -160,19 +175,6 @@ const common = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-        }),
-        new SpritesmithPlugin({
-            src: {
-                cwd: path.resolve(paths.src, 'resources', 'images'),
-                glob: '*.png'
-            },
-            target: {
-                image: path.resolve(paths.generatedSrc, 'sprite.png'),
-                css: path.resolve(paths.generatedSrc, 'sprite.styl')
-            },
-            apiOptions: {
-                cssImageRef: "~sprite.png"
-            }
         }),
         new ExtractTextWebpackPlugin({
             filename: 'css/[name].css?path=[contenthash]',
@@ -190,6 +192,7 @@ const common = {
 
 const production = {
     plugins: [
+        new CleanWebpackPlugin([paths.dist], {root: __dirname}),
         ...uglifyJsPlugin()
     ]
 };
@@ -222,7 +225,6 @@ module.exports = config;
 function uglifyJsPlugin() {
     const plugins = [];
     if (MINIMIZE) {
-        console.log('!!!!');
         plugins.push(new webpack.optimize.UglifyJsPlugin());
     }
     return plugins

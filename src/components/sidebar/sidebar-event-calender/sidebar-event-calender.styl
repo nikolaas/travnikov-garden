@@ -1,5 +1,4 @@
 @import '../../../styles/colors.styl';
-@import '~sprite.styl';
 
 $unselectable-calendar-day-color = #e2dad3;
 
@@ -30,7 +29,9 @@ $unselectable-calendar-day-color = #e2dad3;
     cursor pointer
 
     &::after {
-      sprite($calendar_left_arrow)
+      background url('../../../resources/images/calendar-left-arrow.png') no-repeat center
+      width 8px
+      height 9px
       content ''
       position absolute
       top 50%
@@ -46,7 +47,9 @@ $unselectable-calendar-day-color = #e2dad3;
     cursor pointer
 
     &::after {
-      sprite($calendar_right_arrow)
+      background url('../../../resources/images/calendar-right-arrow.png') no-repeat center
+      width 8px
+      height 9px
       content ''
       position absolute
       top 50%
