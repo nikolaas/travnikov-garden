@@ -1,8 +1,9 @@
 mixin breadcrumbs(path)
     .breadcrumbs
         .container
-            each element,index in path
-                if index === path.length - 1
-                    span=element.name
-                else
-                    a(title=element.name href=element.href)= element.name
+            each element, index in path
+                span.breadcrumbs__element
+                    if index === path.length - 1
+                        span=element.name
+                    else
+                        a(title=element.name href=element.href)= element.name

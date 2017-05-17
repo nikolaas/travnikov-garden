@@ -2,6 +2,7 @@ import './live-counter';
 import './header';
 import './navigation';
 import './main-section-title';
+import './section-title';
 import './popup-menu';
 import './slider';
 import './breadcrumbs';
