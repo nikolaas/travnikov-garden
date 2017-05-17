@@ -1,5 +1,8 @@
 @import 'colors';
 
+*{
+  outline none
+}
 .c-garden-page {
   font-family 'Open Sans'
   font-size 16px
@@ -14,6 +17,133 @@
 //    text-decoration none
 //  }
 //}
+.both {
+  clear both
+}
+input[type="text"]{
+  color $main-text-color
+  padding 0 15px
+  line-height 40px
+  outline none
+  border-color $minor-border-color
+  box-shadow none
+  &:focus {
+    outline none
+    border-color $minor-border-color
+    box-shadow none
+  }
+}
+textarea{
+  outline none
+  border-color $minor-border-color
+  box-shadow none
+  resize none
+  &:focus {
+    outline none
+    border-color $minor-border-color
+    box-shadow none
+  }
+}
+textarea.form-control{
+  outline none
+  border-color $minor-border-color
+  box-shadow none
+  resize none
+  &:focus {
+    outline none
+    border-color $minor-border-color
+    box-shadow none
+  }
+}
+::-webkit-input-placeholder {
+  color $main-text-color
+  font-style italic
+  text-overflow ellipsis
+  opacity 1
+  transition opacity 0.3s ease
+}
+::-moz-placeholder {
+  color $main-text-color
+  font-style italic
+  text-overflow ellipsis
+  opacity 1
+  transition opacity 0.3s ease
+}
+:-moz-placeholder {
+  color $main-text-color
+  font-style italic
+  text-overflow ellipsis
+  opacity 1
+  transition opacity 0.3s ease
+}
+:-ms-input-placeholder {
+  color $main-text-color
+  font-style italic
+  text-overflow ellipsis
+  opacity 1
+  transition opacity 0.3s ease
+}
+.form-control::-moz-placeholder{
+  color $main-text-color
+  font-style italic
+  text-overflow ellipsis
+  opacity 1
+  transition opacity 0.3s ease
+}
+.form-control:-moz-placeholder{
+  color $main-text-color
+  font-style italic
+  text-overflow ellipsis
+  opacity 1
+  transition opacity 0.3s ease
+}
+.form-control:-ms-input-placeholder{
+  color $main-text-color
+  font-style italic
+  text-overflow ellipsis
+  opacity 1
+  transition opacity 0.3s ease
+}
+.form-control::-webkit-input-placeholder{
+  color $main-text-color
+  font-style italic
+  text-overflow ellipsis
+  opacity 1
+  transition opacity 0.3s ease
+}
+:focus::-webkit-input-placeholder {
+  opacity 0
+  transition opacity 0.3s ease
+}
+:focus::-moz-placeholder {
+  opacity 0
+  transition opacity 0.3s ease
+}
+:focus:-moz-placeholder {
+  opacity 0
+  transition opacity 0.3s ease
+}
+:focus:-ms-input-placeholder {
+  opacity 0
+  transition opacity 0.3s ease
+}
+
+.form-control:focus::-moz-placeholder{
+  opacity 0
+  transition opacity 0.3s ease
+}
+.form-control:focus:-moz-placeholder{
+  opacity 0
+  transition opacity 0.3s ease
+}
+.form-control:focus:-ms-input-placeholder{
+  opacity 0
+  transition opacity 0.3s ease
+}
+.form-control:focus::-webkit-input-placeholder{
+  opacity 0
+  transition opacity 0.3s ease
+}
 
 .c-garden-page__header-image {
   width 100%
