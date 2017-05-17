@@ -1,3 +1,5 @@
+@import '../styles/colors.styl';
+
 .c-legal-position__documents {
   margin-top 70px
 }
@@ -7,5 +9,34 @@
 }
 
 .c-legal-position__document {
+  margin-bottom 40px
+  text-align center
+}
+.c-legal-position__document-preview {
+  box-shadow 0 3px 5px 2px rgba(0,0,0,0.2)
+  margin-bottom 30px
+}
+.c-legal-position__document-preview-image {
+  width 100%
+}
+.c-legal-position__document-name {
+  font-size 24px
+  line-height 30px
+  margin-bottom 15px
+}
+.c-legal-position__document-download {
+
+}
+.c-legal-position__document-download-icon {
+  color $download-text-color
+  margin-right 3px
+}
+.c-legal-position__document-download-link {
+  color inherit
+  text-decoration underline
   display inline-block
+  margin-right 5px
+  &:hover {
+    text-decoration none
+  }
 }
