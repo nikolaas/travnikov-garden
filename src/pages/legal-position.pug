@@ -1,0 +1,48 @@
+include ../components/header/header.pug
+include ../components/navigation/navigation.pug
+include ../components/breadcrumbs/breadcrumbs.pug
+include ../components/main-section-title/main-section-title.pug
+include ../components/section-title/section-title.pug
+include ../components/sidebar/sidebar.pug
+include ../components/garden-statistics/garden-statistics.pug
+include ../components/footer/footer.pug
+
+-var data = require('./legal-position.data');
+
+doctype html
+html
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Garden|Legal position
+        meta(name='description', content= "Official Travnikov's garden site")
+    body.c-garden-page
+        +header
+        +navigation
+        .c-garden-page__header-image
+        +breadcrumbs(data.breadcrumbs)
+        .c-garden-page__title
+            .container
+                +main-section-title('Юридическое положение', 'fa fa-file-text-o')
+        .c-garden-page__content
+            .container
+                .row
+                    .col-md-9
+                        p Сад П.И.Травникова - ценнейший объект культурного и экологического наследия Москвы, единственная сохранившаяся ООПТ (особо охраняемая природная территория) в ЦАО. Сад создавался в 1957-58 годах, и за время своего существования вместе со своим создателем Павлом Ивановичем Травниковым был удостоен грамот, медалей и признания, в 1989 году получил статус памятника природы, созданного руками человека.
+                        p Мы живём в большом городе . Москва. Как часто люди проходят мимо домов, улиц и скверов, не замечая красоты вокруг себя. Люди бегут, бегут, их ничего не интересует кроме собственных проблем. А ведь можно и всю жизнь пробегать, так ничего и не заметив!
+                        p Но стоит лишь чуть приоткрыть «форточку» своей души, вздохнуть полной грудью свежий воздух, и мир сразу преображается и окрашивается в новые, яркие краски. Между серыми домами появляется нечто светлое, счастливое, то, что не захочется забыть никогда, что будет греть и радовать душу всю жизнь.
+                        .c-legal-position__documents
+                            +section-title('Документы')
+                            .c-legal-position__document-list
+                                .c-legal-position__document
+                                    .c-legal-position__document-preview
+                                        img.c-legal-position__document-preview-mage
+                                    .c-legal-position__document-name
+                                    .c-legal-position__document-download
+                                        a(href='')
+                                            .c-legal-position__document-download-icon
+                                            span Скачать
+                                        .c-legal-position__document-download-size
+                    +sidebar(data.sidebar)(class="col-md-3")
+        +footer
