@@ -133,6 +133,8 @@ $copyright-background = #313131;
   border-radius 100%
   color $accent-text-color
   font-size 24px
+  background transparent
+  transition: background ease 0.3s;
 
   &:focus,
   &:visited,
@@ -140,6 +142,7 @@ $copyright-background = #313131;
   &:hover {
     color $accent-text-color
     text-decoration none
+    background $accent-background-color
   }
 
   .fa {
