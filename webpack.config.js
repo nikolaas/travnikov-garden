@@ -2,9 +2,9 @@ const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const createPageGenerator = require('./libs/create-page-generator');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const vendors = require('./vendors');
 
 const NODE_ENV = process.env.NODE_ENV || 'production';
@@ -18,7 +18,11 @@ const paths = {
     dist: path.resolve(__dirname, 'dist')
 };
 
-const generatePage = createPageGenerator(paths.pages);
+const pages = [
+    'index',
+    'about',
+    'legal-position'
+];
 
 //правила обработки js
 const jsRule = {
@@ -139,14 +143,23 @@ const externalImagesRule = {
     }
 };
 
+const entries = {};
+const htmlPages = [];
+
+pages.forEach(page => {
+    entries[page] = path.resolve(paths.pages, page, page);
+    htmlPages.push(new HtmlWebpackPlugin({
+        filename: `${page}.html`,
+        template: path.resolve(paths.pages, page, `${page}.pug`),
+        chunks: ['vendors', 'common', page]
+    }));
+});
+
 const common = {
-    entry: {
+    entry: merge(entries, {
         vendors: vendors,
         common: path.resolve(paths.pages, 'common'),
-        index: path.resolve(paths.pages, 'index'),
-        about: path.resolve(paths.pages, 'about'),
-        'legal-position': path.resolve(paths.pages, 'legal-position')
-    },
+    }),
     output: {
         filename: 'js/[name].js?hash=[hash]',
         path: paths.dist
@@ -183,9 +196,7 @@ const common = {
             // поэтому для отладки в IE 8 нужно закомментировать эту строку
             // disable: !PRODUCTION_MODE
         }),
-        generatePage('index'),
-        generatePage('about'),
-        generatePage('legal-position')
+        ...htmlPages
     ],
     devtool: 'source-map'
 };
@@ -227,5 +238,5 @@ function uglifyJsPlugin() {
     if (MINIMIZE) {
         plugins.push(new webpack.optimize.UglifyJsPlugin());
     }
-    return plugins
+    return plugins;
 }
