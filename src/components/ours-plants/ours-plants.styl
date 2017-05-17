@@ -5,7 +5,7 @@ $gallery-width = 100%;
 $gallery-height = 450px;
 
 .c-ours-plants {
-  padding 70px 0
+  padding 0 0 70px
 }
 
 .c-ours-plants__section-icon {
@@ -15,18 +15,97 @@ $gallery-height = 450px;
 
 .c-ours-plants__gallery {
   margin-top 40px
-  height $gallery-height
+  margin-bottom 50px
+  width 100%
+  overflow hidden
+  &::after{
+    content ''
+    display block
+    clear both
+  }
 }
-
 .c-ours-plants__gallery-item {
-  width ($gallery-width / 6)
-  height ($gallery-height / 2)
+//width ($gallery-width / 6)
+//height ($gallery-height / 2)
+  /*width 312px
+  height 225px*/
+  width 20%
+  height 225px
+  float left
+  overflow hidden
+  background-size cover
+  img {
+    min-width 100%
+  }
+}
+.c-ours-plants__gallery-item-link {
+  display block
+  position absolute
+  top 0
+  bottom 0
+  right 0
+  left 0
+  background rgba(54,117,34,0.55) url("../../resources/indi-images/hower-flower.png") no-repeat bottom left
+  opacity 0
+  text-decoration none
+  -webkit-transition all 0.4s ease-in-out
+  -moz-transition all 0.4s ease-in-out
+  -o-transition all 0.4s ease-in-out
+  -ms-transition all 0.4s ease-in-out
+  transition all 0.4s ease-in-out
+  -webkit-transform scale(0)
+  -moz-transform scale(0)
+  -o-transform scale(0)
+  -ms-transform scale(0)
+  transform scale(0)
+  -webkit-backface-visibility: hidden
+}
+.c-ours-plants__gallery-item {
+  &:hover {
+    .c-ours-plants__gallery-item-link {
+      opacity: 1;
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -o-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+}
+.c-ours-plants__gallery-item-link-plus{
+  position absolute
+  top 50%
+  left 50%
+  width 90px
+  height 90px
+  margin-top -45px
+  margin-left -45px
+  background url("../../resources/indi-images/plus.png") no-repeat center
+}
+@media(max-width 768px) {
+  .c-ours-plants__gallery-item {
+    width 50%
+  }
+}
+@media(max-width 480px) {
+  .c-ours-plants__gallery-item {
+    width 100%
+  }
 }
 
-.c-ours-plants__gallery-item--w-2 {
-  width ($gallery-width / 3)
-}
 
-.c-ours-plants__gallery-item--h-2 {
-  height ($gallery-height)
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

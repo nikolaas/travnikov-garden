@@ -1,0 +1,32 @@
+include ../components/header/header.pug
+include ../components/navigation/navigation.pug
+include ../components/breadcrumbs/breadcrumbs.pug
+include ../components/main-section-title/main-section-title.pug
+include ../components/sidebar/sidebar.pug
+include ../components/footer/footer.pug
+
+-var data = require('./news.data');
+
+doctype html
+html
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Garden|About
+        meta(name='description', content= "Official Travnikov's garden site")
+    body.c-garden-page
+        +header
+        +navigation
+        .c-garden-page__header-image.c-garden-page__header-image-news
+        +breadcrumbs(data.breadcrumbs)
+        .c-garden-page__title
+            .container
+                +main-section-title('Новости', 'c-garden-about__section-icon')
+        .c-garden-page__content
+            .container
+                .row
+                    .col-md-9
+                        |Новости
+                    .col-md-3
+        +footer

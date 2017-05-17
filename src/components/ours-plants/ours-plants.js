@@ -4,7 +4,8 @@ import Masonry from 'masonry-layout';
 const MASONRY_CONFIG = {
     "itemSelector": '.c-ours-plants__gallery-item',
     "columnWidth": '.c-ours-plants__gallery-item',
-    percentPosition: true
+    gutter: 0
+    //percentPosition: true
 };
 
 const gallery = $('.c-ours-plants__gallery');
