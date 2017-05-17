@@ -129,7 +129,8 @@ const common = {
         vendors: vendors,
         common: path.resolve(paths.pages, 'common'),
         index: path.resolve(paths.pages, 'index'),
-        about: path.resolve(paths.pages, 'about')
+        about: path.resolve(paths.pages, 'about'),
+        'legal-position': path.resolve(paths.pages, 'legal-position')
     },
     output: {
         filename: 'js/[name].js?hash=[hash]',
@@ -181,7 +182,8 @@ const common = {
             // disable: !PRODUCTION_MODE
         }),
         generatePage('index'),
-        generatePage('about')
+        generatePage('about'),
+        generatePage('legal-position')
     ],
     devtool: 'source-map'
 };
