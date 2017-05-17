@@ -109,7 +109,7 @@ const fontsRule = {
 };
 //правила обработки шрифтов
 const imagesRule = {
-    test: /\.png$/,
+    test: /\.(png|jpg)$/,
     include: [
         paths.src,
         paths.generatedSrc
