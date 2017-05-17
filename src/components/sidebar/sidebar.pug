@@ -6,6 +6,12 @@ include sidebar-social/sidebar-social.pug
 mixin sidebar(data)
     .sidebar&attributes(attributes)
         .sidebar-item
+            h4.sidebar-item-title Поиск по сайту
+            .sidebar-item-search
+                input.sidebar-item-search--input(type="text" name="search" placeholder="Введите запрос...")
+                input.sidebar-item-search--button(type="submit" name="search-button" value="")
+                .both
+        .sidebar-item
             h4.sidebar-item-title=data.menu.title
             +sidebar-menu(data.menu.items)
         .sidebar-item
