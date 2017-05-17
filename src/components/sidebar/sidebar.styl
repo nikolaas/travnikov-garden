@@ -38,3 +38,36 @@
     }
   }
 }
+.sidebar-item-search {
+  width 100%
+  position relative
+  &--input {
+    margin-right 48px
+    background #fff
+    border 1px solid $minor-border-color
+    height 40px
+    line-height 40px
+    width 100%
+    padding-right 63px!important
+  }
+  &--button {
+    width 48px
+    height 40px
+    background $accent-background-color url("../../resources/indi-images/search-icon.png") center no-repeat
+    border none
+    position absolute
+    right 0
+    top 0
+    transition all ease 0.3s
+    &:focus {
+      background-color $accent-background-color
+      color $accent-text-color
+      outline none
+    }
+
+    &:hover {
+      background-color lighten($accent-background-color, 10%)
+      color $accent-text-color
+    }
+  }
+}
