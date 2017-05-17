@@ -58,12 +58,15 @@ const newsItems = [
 
 const oursPlants = [
     {image: oursPlant1},
+    {image: oursPlant2},
     {image: oursPlant3},
     {image: oursPlant4},
-    {image: oursPlant7},
-    {image: oursPlant2},
+    {image: oursPlant5},
+    {image: oursPlant4},
     {image: oursPlant5},
     {image: oursPlant6},
+    {image: oursPlant1},
+    {image: oursPlant2}
 ];
 
 export default {sliderItems, newsItems, oursPlants};

@@ -1,5 +1,5 @@
 const breadcrumbs = [
-    {name:"Главная", href:"/"},
+    {name:"Главная", href:"index.html"},
     {name:"Новости"}
 ];
 
@@ -8,8 +8,7 @@ const newsData = {
         day: '29',
         month: 'янв',
         year: '2017'
-    },
+    }
+};
 
-}
-
-export {breadcrumbs,newsData};
+export {breadcrumbs, newsData};
