@@ -1,10 +1,10 @@
-include ../components/header/header.pug
-include ../components/navigation/navigation.pug
-include ../components/breadcrumbs/breadcrumbs.pug
-include ../components/main-section-title/main-section-title.pug
-include ../components/sidebar/sidebar.pug
-include ../components/garden-statistics/garden-statistics.pug
-include ../components/footer/footer.pug
+include ../../components/header/header
+include ../../components/navigation/navigation
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/main-section-title/main-section-title
+include ../../components/sidebar/sidebar
+include ../../components/garden-statistics/garden-statistics
+include ../../components/footer/footer
 
 -var data = require('./about.data');
 
@@ -30,9 +30,9 @@ html
                     .col-md-9
                         p Сад П.И.Травникова - ценнейший объект культурного и экологического наследия Москвы, единственная сохранившаяся ООПТ (особо охраняемая природная территория) в ЦАО. Сад создавался в 1957-58 годах, и за время своего существования вместе со своим создателем Павлом Ивановичем Травниковым был удостоен грамот, медалей и признания, в 1989 году получил статус памятника природы, созданного руками
                         .c-about__image.c-about__image--right
-                            img.c-about__substrate-image(src=require('../resources/indi-images/about-garden-1-substrate.jpg'))
+                            img.c-about__substrate-image(src=require('../../resources/external-images/about-garden-1-substrate.jpg'))
                             .c-about__base-image-container
-                                img.c-about__base-image(src=require('../resources/indi-images/about-garden-1.jpg'))
+                                img.c-about__base-image(src=require('../../resources/external-images/about-garden-1.jpg'))
                         p Мы живём в большом городе . Москва. Как часто люди проходят мимо домов, улиц и скверов, не замечая красоты вокруг себя. Люди бегут, бегут, их ничего не интересует кроме собственных проблем. А ведь можно и всю жизнь пробегать, так ничего и не заметив!
                         p Но стоит лишь чуть приоткрыть «форточку» своей души, вздохнуть полной грудью свежий воздух, и мир сразу преображается и окрашивается в новые, яркие краски. Между серыми домами появляется нечто светлое, счастливое, то, что не захочется забыть никогда, что будет греть и радовать душу всю жизнь.
                         p На наш взгляд, сад имени Павла Ивановича Травникова и является этим «лучиком света в тёмном царстве».
@@ -40,9 +40,9 @@ html
                             br
                         +garden-statistics(class="c-about__garden-statistics")
                         .c-about__image.c-about__image--left
-                            img.c-about__substrate-image(src=require('../resources/indi-images/about-garden-2-substrate.jpg'))
+                            img.c-about__substrate-image(src=require('../../resources/external-images/about-garden-2-substrate.jpg'))
                             .c-about__base-image-container
-                                img.c-about__base-image(src=require('../resources/indi-images/about-garden-2.jpg'))
+                                img.c-about__base-image(src=require('../../resources/external-images/about-garden-2.jpg'))
                         p Мы счастливы, что можем рассказать всему миру о саде, поделиться нашим «открытием».
                         p О том, что рядом со школой есть объект, требующий нашей заботы, мы узнали случайно. Просто учитель биологии в обычный солнечный весенний день вышел за ворота школы, перешёл через Комсомольский проспект, совершенно случайно набрёл на таинственный сад, вечно закрытый на замок. Сразу выяснилось, что сад пребывает в запустении и женщину, ранее за ним ухаживающую, не видели уже больше года…
                         p Через два дня ребята 5а класса уже работали в саду… Это было 20 марта 2007 года и с этой даты начинается наша деятельность в саду им. П.И. Травникова…

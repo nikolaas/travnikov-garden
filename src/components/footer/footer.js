@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import {Map} from '../map';
 import {MAP_ID} from './footer.constants';
-import {GARDEN_COORDINATES} from '../../common/garden.data';
-import gardenMarker from '../../resources/indi-images/garden-marker.png';
+import {GARDEN_COORDINATES} from '../../common/common.data';
+import gardenMarker from '../../resources/external-images/garden-marker.png';
 
 const gardenMarkerWidth = 38;
 const gardenMarkerHeight = 57;

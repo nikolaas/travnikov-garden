@@ -1,18 +1,18 @@
-import slide1 from '../resources/indi-images/slide1.png';
-import slide2 from '../resources/indi-images/slide2.png';
-import slide3 from '../resources/indi-images/slide3.png';
+import slide1 from '../../resources/external-images/slide1.png';
+import slide2 from '../../resources/external-images/slide2.png';
+import slide3 from '../../resources/external-images/slide3.png';
 
-import news1 from '../resources/indi-images/new1.png';
-import news2 from '../resources/indi-images/new2.png';
-import news3 from '../resources/indi-images/new3.png';
+import news1 from '../../resources/external-images/new1.png';
+import news3 from '../../resources/external-images/new3.png';
+import news2 from '../../resources/external-images/new2.png';
 
-import oursPlant1 from '../resources/indi-images/ours-plant-1.png';
-import oursPlant2 from '../resources/indi-images/ours-plant-2.png';
-import oursPlant3 from '../resources/indi-images/ours-plant-3.png';
-import oursPlant4 from '../resources/indi-images/ours-plant-4.png';
-import oursPlant5 from '../resources/indi-images/ours-plant-5.png';
-import oursPlant6 from '../resources/indi-images/ours-plant-6.png';
-import oursPlant7 from '../resources/indi-images/ours-plant-7.png';
+import oursPlant1 from '../../resources/external-images/ours-plant-1.png';
+import oursPlant2 from '../../resources/external-images/ours-plant-2.png';
+import oursPlant3 from '../../resources/external-images/ours-plant-3.png';
+import oursPlant4 from '../../resources/external-images/ours-plant-4.png';
+import oursPlant5 from '../../resources/external-images/ours-plant-5.png';
+import oursPlant6 from '../../resources/external-images/ours-plant-6.png';
+import oursPlant7 from '../../resources/external-images/ours-plant-7.png';
 
 const sliderItems = [
     {

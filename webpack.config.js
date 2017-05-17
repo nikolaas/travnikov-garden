@@ -2,10 +2,9 @@ const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const createPageGenerator = require('./libs/create-page-generator');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
-const SpritesmithPlugin = require('webpack-spritesmith');
 const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const vendors = require('./vendors');
 
 const NODE_ENV = process.env.NODE_ENV || 'production';
@@ -19,7 +18,12 @@ const paths = {
     dist: path.resolve(__dirname, 'dist')
 };
 
-const generatePage = createPageGenerator(paths.pages);
+const PAGES = [
+    'index',
+    'about',
+    'legal-position',
+    'news'
+];
 
 //правила обработки js
 const jsRule = {
@@ -107,32 +111,56 @@ const fontsRule = {
         }
     }
 };
-//правила обработки шрифтов
+//правила обработки статических изображений сайта
 const imagesRule = {
     test: /\.(png|jpg)$/,
     include: [
-        paths.src,
+        path.resolve(paths.src, 'resources', 'images'),
         paths.generatedSrc
     ],
     use: {
-        loader: 'file-loader',
+        loader: 'url-loader',
         options: {
+            limit: 10000,
             name: '[name].[ext]?hash=[hash]',
             outputPath: 'images/',
             publicPath: '../images/'
         }
     }
 };
+//правила обработки динамических изображений (которые должны в результате быть загружжены с хостинга)
+const externalImagesRule = {
+    test: /\.(png|jpg)$/,
+    include: [
+        path.resolve(paths.src, 'resources', 'external-images'),
+    ],
+    use: {
+        loader: 'file-loader',
+        options: {
+            name: '[name].[ext]?hash=[hash]',
+            outputPath: 'external-images/',
+            publicPath: 'external-images/'
+        }
+    }
+};
+
+const entries = {};
+const htmlPages = [];
+
+PAGES.forEach(page => {
+    entries[page] = path.resolve(paths.pages, page, page);
+    htmlPages.push(new HtmlWebpackPlugin({
+        filename: `${page}.html`,
+        template: path.resolve(paths.pages, page, `${page}.pug`),
+        chunks: ['vendors', 'common', page]
+    }));
+});
 
 const common = {
-    entry: {
+    entry: merge(entries, {
         vendors: vendors,
-        common: path.resolve(paths.pages, 'common'),
-        index: path.resolve(paths.pages, 'index'),
-        about: path.resolve(paths.pages, 'about'),
-        'legal-position': path.resolve(paths.pages, 'legal-position'),
-        news: path.resolve(paths.pages, 'news')
-    },
+        common: path.resolve(paths.src, 'common', 'common'),
+    }),
     output: {
         filename: 'js/[name].js?hash=[hash]',
         path: paths.dist
@@ -144,7 +172,8 @@ const common = {
             vendorsStylesRule,
             appStylesRule,
             fontsRule,
-            imagesRule
+            imagesRule,
+            externalImagesRule
         ]
     },
     resolve: {
@@ -152,7 +181,6 @@ const common = {
         modules: ['node_modules', 'generated_src']
     },
     plugins: [
-        new CleanWebpackPlugin([paths.dist], {root: __dirname}),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['common', 'vendors'],
@@ -162,19 +190,6 @@ const common = {
             $: 'jquery',
             jQuery: 'jquery',
         }),
-        new SpritesmithPlugin({
-            src: {
-                cwd: path.resolve(paths.src, 'resources', 'images'),
-                glob: '*.png'
-            },
-            target: {
-                image: path.resolve(paths.generatedSrc, 'sprite.png'),
-                css: path.resolve(paths.generatedSrc, 'sprite.styl')
-            },
-            apiOptions: {
-                cssImageRef: "~sprite.png"
-            }
-        }),
         new ExtractTextWebpackPlugin({
             filename: 'css/[name].css?path=[contenthash]',
             // Похоже что webpack использует возвожности, недоступные в IE 8
@@ -182,16 +197,14 @@ const common = {
             // поэтому для отладки в IE 8 нужно закомментировать эту строку
             // disable: !PRODUCTION_MODE
         }),
-        generatePage('index'),
-        generatePage('about'),
-        generatePage('legal-position'),
-        generatePage('news')
+        ...htmlPages
     ],
     devtool: 'source-map'
 };
 
 const production = {
     plugins: [
+        new CleanWebpackPlugin([paths.dist], {root: __dirname}),
         ...uglifyJsPlugin()
     ]
 };
@@ -224,8 +237,7 @@ module.exports = config;
 function uglifyJsPlugin() {
     const plugins = [];
     if (MINIMIZE) {
-        console.log('!!!!');
         plugins.push(new webpack.optimize.UglifyJsPlugin());
     }
-    return plugins
+    return plugins;
 }
