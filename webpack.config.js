@@ -18,7 +18,7 @@ const paths = {
     dist: path.resolve(__dirname, 'dist')
 };
 
-const pages = [
+const PAGES = [
     'index',
     'about',
     'legal-position'
@@ -146,7 +146,7 @@ const externalImagesRule = {
 const entries = {};
 const htmlPages = [];
 
-pages.forEach(page => {
+PAGES.forEach(page => {
     entries[page] = path.resolve(paths.pages, page, page);
     htmlPages.push(new HtmlWebpackPlugin({
         filename: `${page}.html`,
@@ -158,7 +158,7 @@ pages.forEach(page => {
 const common = {
     entry: merge(entries, {
         vendors: vendors,
-        common: path.resolve(paths.pages, 'common'),
+        common: path.resolve(paths.src, 'common', 'common'),
     }),
     output: {
         filename: 'js/[name].js?hash=[hash]',

@@ -1,4 +1,4 @@
-import {GARDEN_COORDINATES, GARDEN_ZOOM} from '../../common/garden.data';
+import {GARDEN_COORDINATES, GARDEN_ZOOM} from '../../common/common.data';
 
 const DEFAULT_OPTIONS = {
     center: GARDEN_COORDINATES,
