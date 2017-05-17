@@ -35,14 +35,18 @@ html
                         .c-legal-position__documents
                             +section-title('Документы')
                             .c-legal-position__document-list
-                                .c-legal-position__document
-                                    .c-legal-position__document-preview
-                                        img.c-legal-position__document-preview-mage
-                                    .c-legal-position__document-name
-                                    .c-legal-position__document-download
-                                        a(href='')
-                                            .c-legal-position__document-download-icon
-                                            span Скачать
-                                        .c-legal-position__document-download-size
-                    +sidebar(data.sidebar)(class="col-md-3")
+                                .row
+                                    each item in data.documents
+                                        .col-md-4
+                                            .c-legal-position__document
+                                                .c-legal-position__document-preview
+                                                    img(src=item.image alt=item.name).c-legal-position__document-preview-image
+                                                .c-legal-position__document-name=item.name
+                                                .c-legal-position__document-download
+                                                    i.c-legal-position__document-download-icon.fa.fa-file-pdf-o
+                                                    a.c-legal-position__document-download-link(href=item.href)
+                                                        span Скачать
+                                                    span.c-legal-position__document-download-size=item.data
+                    .col-md-3
+                        +sidebar(data.sidebar)
         +footer
