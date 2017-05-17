@@ -14,9 +14,14 @@ $social-size = 40px
   height $social-size
   border-radius 100%
   margin-right 15px
+  opacity 1
+  transition: opacity ease .3s;
 
   &:last-child {
     margin-right 0
+  }
+  &:hover {
+    opacity 0.7
   }
 
   &.sidebar-social__item--vk {
@@ -27,7 +32,7 @@ $social-size = 40px
     background-color #3b5998
   }
 
-  &.sidebar-social__item--twitter {
+  &.sidebar-social__item--tripadvisor {
     background-color #589442
   }
 
