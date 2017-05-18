@@ -1,5 +1,6 @@
 include sidebar-last-news/sidebar-last-news.pug
 include sidebar-menu/sidebar-menu.pug
+include sidebar-tags/sidebar-tags.pug
 include sidebar-event-calender/sidebar-event-calender.pug
 include sidebar-social/sidebar-social.pug
 
@@ -11,9 +12,14 @@ mixin sidebar(data)
                 input.sidebar-item-search--input(type="text" name="search" placeholder="Введите запрос...")
                 input.sidebar-item-search--button(type="submit" name="search-button" value="")
                 .both
-        .sidebar-item
-            h4.sidebar-item-title=data.menu.title
-            +sidebar-menu(data.menu.items)
+        if data.menu
+            .sidebar-item
+                h4.sidebar-item-title=data.menu.title
+                +sidebar-menu(data.menu.items)
+        if data.tags
+            .sidebar-item
+                h4.sidebar-item-title Теги
+                +sidebar-tags(data.tags)
         .sidebar-item
             h4.sidebar-item-title Последние новости
             +sidebar-last-news
