@@ -2,16 +2,23 @@
 
 $substrate-image-offset = 80px
 
-.c-about__image {
+.c-about-page__icon {
+  background url('../../resources/images/garder-about.png') no-repeat center
+  width 60px
+  height 56px;
+  display block
+}
+
+.c-about-page__image {
   position relative
 }
 
-.c-about__substrate-image {
+.c-about-page__substrate-image {
   position absolute
   z-index 1
 }
 
-.c-about__base-image-container {
+.c-about-page__base-image-container {
   position relative
   box-sizing border-box
   padding 15px
@@ -20,28 +27,28 @@ $substrate-image-offset = 80px
   z-index 2
 }
 
-.c-about__image--left {
+.c-about-page__image--left {
   float left
   margin-right ($substrate-image-offset + 30px)
   margin-bottom ($substrate-image-offset + 30px)
 
-  .c-about__substrate-image {
+  .c-about-page__substrate-image {
     right -($substrate-image-offset)
     bottom -($substrate-image-offset)
   }
 }
 
-.c-about__image--right {
+.c-about-page__image--right {
   float right
   margin-left ($substrate-image-offset + 30px)
   margin-bottom ($substrate-image-offset + 30px)
 
-  .c-about__substrate-image {
+  .c-about-page__substrate-image {
     left -($substrate-image-offset)
     bottom -($substrate-image-offset)
   }
 }
 
-.c-about__garden-statistics {
+.c-about-page__garden-statistics {
   margin-bottom 40px
 }
