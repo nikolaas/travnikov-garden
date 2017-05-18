@@ -3,6 +3,17 @@ const breadcrumbs = [
     {name:"Новости"}
 ];
 
+const sidebar = {
+    tags: [
+        'Растения',
+        'Ботаника',
+        'Голосеменные растения',
+        'Растения',
+        'Травы',
+        'Семена',
+    ]
+};
+
 const newsData = {
     data: {
         day: '29',
@@ -11,4 +22,4 @@ const newsData = {
     }
 };
 
-export {breadcrumbs, newsData};
+export {breadcrumbs, sidebar, newsData};
