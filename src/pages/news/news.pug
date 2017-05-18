@@ -2,6 +2,7 @@ include ../../components/header/header
 include ../../components/navigation/navigation
 include ../../components/breadcrumbs/breadcrumbs
 include ../../components/main-section-title/main-section-title
+include ../../components/hovered-flower/hovered-flower
 include ../../components/sidebar/sidebar
 include ../../components/footer/footer
 
@@ -13,7 +14,7 @@ html
         meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title Garden|About
+        title Garden - News
         meta(name='description', content= "Official Travnikov's garden site")
     body.c-garden-page
         +header
@@ -26,8 +27,32 @@ html
         .c-garden-page__content
             .container
                 .row
-                    .col-md-9
-                        |Новости
+                    .col-md-9.c-news-page__news
+                        each item in data.news
+                            .row.c-news-page__new
+                                .col-md-5
+                                    .c-news-page__new-heading
+                                        .c-news-page__new-meta
+                                            .c-news-page__new-date
+                                                .c-news-page__new-day= item.day
+                                                .c-news-page__new-month= item.month
+                                                .c-news-page__new-year= item.year
+                                            .c-news-page__new-view-count
+                                                .c-news-page__new-view-count-icon.fa.fa-eye
+                                                .c-news-page__new-view-count-value= item.viewCount
+                                        .c-news-page__new-image-container
+                                            img.c-news-page__new-image(src=item.image)
+                                            +hovered-flower('c-news-page__new-image-link fa fa-link')
+                                .col-md-7
+                                    .c-news-page__new-title= item.title
+                                    .c-news-page__new-detail= item.detail
+                                    a.c-news-page__new-link(href="") >Читать далее
+                        .c-news-page__pagination
+                            a.c-news-page__pagination-item.c-news-page__pagination-item--prev(href="") Назад
+                            a.c-news-page__pagination-item.c-news-page__pagination-item--active(href="") 1
+                            a.c-news-page__pagination-item(href="") 2
+                            a.c-news-page__pagination-item(href="") 3
+                            a.c-news-page__pagination-item.c-news-page__pagination-item--next(href="") Вперед
                     .col-md-3
                         +sidebar(data.sidebar)
         +footer

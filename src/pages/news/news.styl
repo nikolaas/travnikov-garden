@@ -1,0 +1,149 @@
+@import '../../styles/colors.styl';
+
+.c-news-page__news {
+
+}
+
+.c-news-page__new {
+  margin-bottom 50px
+}
+
+.c-news-page__new-heading {
+  position relative
+  margin-bottom 30px
+  overflow hidden
+}
+
+.c-news-page__new-image-container {
+  position relative
+  width 100%
+
+  &:hover {
+    .c-hovered-flower {
+      opacity 1
+      transform scale(1)
+    }
+  }
+}
+
+.c-news-page__new-image {
+  width 100%
+}
+
+.c-news-page__new-image-link {
+  &::before {
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+  }
+}
+
+.c-news-page__new-meta {
+  position absolute
+  top 0
+  left 0
+  z-index 10
+}
+
+.c-news-page__new-date {
+  width 70px
+  height 95px
+  background-color $accent-background-color
+  color $accent-text-color
+  font-family 'Georgia'
+  text-align center
+}
+
+.c-news-page__new-day {
+  font-size 30px
+}
+
+.c-news-page__new-month {
+  text-transform uppercase
+}
+
+.c-news-page__new-view-count {
+  width 70px
+  height 60px
+  padding 10px 0
+  background-color $minor-background-color
+  color $minor-text-color
+  font-family 'Georgia'
+  text-align center
+}
+
+.c-news-page__new-view-count-icon {
+  font-size 18px
+}
+
+.c-news-page__new-title {
+  margin-bottom 25px
+  font-family 'Georgia'
+  font-size 24px
+  color $common-text-color
+  border-bottom 1px solid $common-border-color
+}
+
+.c-news-page__new-detail {
+  margin-bottom 40px
+}
+
+.c-news-page__new-link {
+  color $common-text-color
+
+  &:visited,
+  &:active,
+  &:hover {
+    color $common-text-color
+  }
+}
+
+.c-news-page__pagination {
+  font-family 'Georgia'
+  font-size 20px
+  text-align center
+}
+
+.c-news-page__pagination-item {
+  display inline-block
+  width 40px
+  height 40px
+  line-height 40px
+  border 1px solid $common-border-color
+  margin-right 10px
+
+  &:last-child {
+    margin-right 0
+  }
+
+  &:visited,
+  &:active,
+  &:hover {
+    color $common-text-color
+    text-decoration none
+  }
+}
+
+.c-news-page__pagination-item--active {
+  background-color $accent-background-color
+  color $accent-text-color
+
+  &:visited,
+  &:active,
+  &:hover {
+    color $accent-text-color
+  }
+}
+
+.c-news-page__pagination-item--prev,
+.c-news-page__pagination-item--next {
+  border none
+  width auto
+
+  &:visited,
+  &:active,
+  &:hover {
+    text-decoration underline
+  }
+}
