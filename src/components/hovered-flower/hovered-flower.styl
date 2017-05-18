@@ -1,0 +1,29 @@
+@import '../../styles/colors.styl';
+
+.c-hovered-flower {
+  display block
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  transition all 0.4s ease-in-out
+  -webkit-backface-visibility: hidden
+  opacity 0
+  transform scale(0)
+  background rgba(54,117,34,0.55) url("../../resources/images/hower-flower.png") no-repeat bottom left
+}
+
+.c-hovered-flower__marker {
+  position absolute
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
+  display inline-block
+  width 90px
+  height 90px
+  border-radius 100%
+  font-size 24px
+  background-color $minor-background-color
+  color $minor-text-color
+}

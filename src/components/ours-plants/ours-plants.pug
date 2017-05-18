@@ -1,3 +1,5 @@
+include ../hovered-flower/hovered-flower
+
 mixin ours-plants(oursPlants)
     .c-ours-plants
         .container
@@ -6,8 +8,7 @@ mixin ours-plants(oursPlants)
             each plant in oursPlants
                 -const background = "background-image:url(" + plant.image+ ")";
                 .c-ours-plants__gallery-item(style=background)
-                    a.c-ours-plants__gallery-item-link(href="#")
-                        span.c-ours-plants__gallery-item-link-plus
+                    +hovered-flower('c-ours-plants__gallery-item-link')
         .container
             .row
                 .col-md-offset-5.col-md-2

@@ -1,0 +1,5 @@
+mixin hovered-flower(markerClass, link)
+    - markerClass = "c-hovered-flower__marker " + (markerClass || '');
+    - link = link || '';
+    a.c-hovered-flower(href=link)
+        span(class=markerClass)
