@@ -21,6 +21,7 @@ const paths = {
 const PAGES = [
     'index',
     'about',
+    'garden-history',
     'legal-position',
     'news'
 ];
