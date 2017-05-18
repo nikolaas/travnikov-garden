@@ -1,0 +1,48 @@
+include ../../components/header/header
+include ../../components/navigation/navigation
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/main-section-title/main-section-title
+include ../../components/hovered-flower/hovered-flower
+include ../../components/sidebar/sidebar
+include ../../components/footer/footer
+
+-var data = require('./garden-history.data');
+
+doctype html
+html
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Garden - History
+        meta(name='description', content= "Official Travnikov's garden site")
+    body.c-garden-page
+        +header
+        +navigation
+        .c-garden-page__header-image.c-garden-page__header-image-news
+        +breadcrumbs(data.breadcrumbs)
+        .c-garden-page__title
+            .container
+                +main-section-title('История сада', 'c-garden-history-page__icon')
+        .c-garden-page__content
+            .container
+                .row
+                    .col-md-9
+                        ul.c-garden-history-page__moments
+                            each moment in data.moments
+                                li.c-garden-history-page__moment
+                                    .c-garden-history-page__time-line
+                                        .c-garden-history-page__moment-year= moment.year
+                                    .c-garden-history-page__moment-content
+                                        .c-garden-history-page__moment-name= moment.name
+                                        .row
+                                            .col-md-3
+                                                img.c-garden-history-page__moment-image(src=moment.image)
+                                            .col-md-9
+                                                .c-garden-history-page__moment-description= moment.description
+                                        .c-garden-history-page__moment-details
+                                            a.c-garden-history-page__moment-link(href='')
+                                                span подробнее
+                    .col-md-3
+                        +sidebar(data.sidebar)
+        +footer

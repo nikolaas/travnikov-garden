@@ -1,0 +1,97 @@
+@import '../../styles/colors.styl';
+
+.c-garden-history-page__icon {
+  background url('../../resources/images/garder-about.png') no-repeat center
+  width 60px
+  height 56px;
+  display block
+}
+
+.c-garden-history-page__moments {
+  list-style none
+  padding 0
+}
+
+.c-garden-history-page__time-line {
+  &::before,
+  &::after {
+    display block
+    content ''
+    width 1px
+    height 40px
+    margin auto
+    background-color $accent-background-color
+  }
+}
+
+.c-garden-history-page__moment {
+  text-align center
+
+  &:first-child {
+    .c-garden-history-page__time-line {
+      &::before {
+        display none
+      }
+    }
+  }
+}
+
+.c-garden-history-page__moment-year {
+  width 70px
+  height 70px
+  line-height 70px
+  margin auto
+  border-radius 100%
+  border 1px solid $common-border-color
+  color $common-text-color
+  font-size 18px
+  text-align center
+}
+
+.c-garden-history-page__moment-content {
+  border 1px solid $common-border-color
+}
+
+.c-garden-history-page__moment-name {
+  height 40px
+  line-height 40px
+  background-color $accent-background-color
+  color $accent-text-color
+  text-transform uppercase
+}
+
+.c-garden-history-page__moment-image {
+  width 100%
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.c-garden-history-page__moment-description {
+  padding 30px 30px 0 30px
+  text-align left
+}
+
+.c-garden-history-page__moment-details {
+  margin 30px 30px 30px 0
+  text-align right
+}
+
+.c-garden-history-page__moment-link {
+  color $common-text-color
+
+  &:visited,
+  &:active,
+  &:hover {
+    color $common-text-color
+  }
+
+  &::after {
+    content ''
+    display: inline-block;
+    vertical-align: middle;
+    background url('../../resources/images/link-arrow-right.png') no-repeat center
+    width 22px
+    height 17px
+    margin-left 15px
+  }
+}

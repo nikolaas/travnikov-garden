@@ -1,3 +1,1 @@
-/**
- * Created by Анастасия Мяоц on 18.05.2017.
- */
+import './garden-history.styl';
