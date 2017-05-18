@@ -1,14 +1,14 @@
 const breadcrumbs = [
-    {name:"Главная", href:"/"},
-    {name:"О саде", href:"/about"},
-    {name:"Юридическое положение"}
+    {name: "Главная", href: "index.html"},
+    {name: "О саде", href: "about.html"},
+    {name: "Юридическое положение"}
 ];
 
 const sidebar = {
     menu: {
         title: 'О саде',
         items: [
-            {href: '', name: 'История сада'},
+            {href: 'garden-history.html', name: 'История сада'},
             {href: '', name: 'Юридическое положение'}
         ]
     }
