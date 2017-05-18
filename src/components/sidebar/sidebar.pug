@@ -1,7 +1,6 @@
 include sidebar-menu/sidebar-menu.pug
 include sidebar-tags/sidebar-tags.pug
 include sidebar-last-news/sidebar-last-news.pug
-include sidebar-news-subscription/sidebar-news-subscription.pug
 include sidebar-event-calender/sidebar-event-calender.pug
 include sidebar-social/sidebar-social.pug
 
@@ -24,9 +23,6 @@ mixin sidebar(data)
         .sidebar-item
             h4.sidebar-item-title Последние новости
             +sidebar-last-news
-        .sidebar-item
-            h4.sidebar-item-title Подписка на новости
-            +sidebar-news-subscription
         .sidebar-item
             h4.sidebar-item-title Календарь мероприятий
             +sidebar-event-calender
