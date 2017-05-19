@@ -23,7 +23,8 @@ const PAGES = [
     'about',
     'garden-history',
     'legal-position',
-    'news'
+    'news',
+    'partnership'
 ];
 
 //правила обработки js
