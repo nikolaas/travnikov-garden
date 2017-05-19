@@ -1,6 +1,6 @@
 const breadcrumbs = [
-    {name:"Главная", href:"index.html"},
-    {name:"О саде"}
+    {name: "Главная", href: "index.html"},
+    {name: "О саде"}
 ];
 
 const sidebar = {
