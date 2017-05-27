@@ -1,0 +1,40 @@
+include ../../components/header/header
+include ../../components/navigation/navigation
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/main-section-title/main-section-title
+include ../../components/sidebar/sidebar
+include ../../components/garden-statistics/garden-statistics
+include ../../components/footer/footer
+
+-var data = require('./plants.data');
+
+doctype html
+html
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Garden - Plants
+        meta(name='description', content= "Official Travnikov's garden site")
+    body.c-garden-page
+        +header
+        +navigation
+        .c-garden-page__scene.c-plants-page__scene
+        +breadcrumbs(data.breadcrumbs)
+        .c-garden-page__title
+            .container
+                +main-section-title('Растения', 'c-plants-page__icon')
+        .c-garden-page__content.c-plants-page__content
+            .container
+                p Сад П.И.Травникова - ценнейший объект культурного и экологического наследия Москвы, единственная сохранившаяся ООПТ (особо охраняемая природная территория) в ЦАО. Сад создавался в 1957-58 годах, и за время своего существования вместе со своим создателем Павлом Ивановичем Травниковым был удостоен грамот, медалей и признания, в 1989 году получил статус памятника природы, созданного руками
+                .row.row-centered.c-plants-page__subsections
+                    each subsection in data.subsections
+                        .col-md-4.col-centered
+                            .c-plants-page__subsection
+                                a.c-plants-page__subsection_link(href=subsection.link)
+                                    img.c-plants-page__subsection-image(src=subsection.image)
+                                    img.c-plants-page__subsection-sketch(src=subsection.sketch)
+                                    .c-plants-page__subsection-title
+                                        .c-plants-page__subsection-title-text= subsection.title
+                                .c-plants-page__subsection_description= subsection .description
+        +footer

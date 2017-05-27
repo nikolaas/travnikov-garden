@@ -25,6 +25,7 @@ const PAGES = [
     'about-founder',
     'about-romanova',
     'legal-position',
+    'plants',
     'news',
     'partnership'
 ];
