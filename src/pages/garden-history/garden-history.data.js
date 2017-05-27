@@ -9,7 +9,7 @@ const sidebar = {
         title: 'История сада',
         items: [
             {name: 'Об основателе', href: 'about-founder.html'},
-            {name: 'О Н.И. Романовой', href: ''},
+            {name: 'О Н.И. Романовой', href: 'about-romanova.html'},
             {name: 'Возрождение', href: ''}
         ]
     }
