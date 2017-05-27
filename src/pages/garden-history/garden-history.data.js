@@ -8,7 +8,7 @@ const sidebar = {
     menu: {
         title: 'История сада',
         items: [
-            {name: 'Об основателе', href: ''},
+            {name: 'Об основателе', href: 'about-founder.html'},
             {name: 'О Н.И. Романовой', href: ''},
             {name: 'Возрождение', href: ''}
         ]

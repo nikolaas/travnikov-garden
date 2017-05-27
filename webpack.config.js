@@ -22,6 +22,7 @@ const PAGES = [
     'index',
     'about',
     'garden-history',
+    'about-founder',
     'legal-position',
     'news',
     'partnership'

@@ -1,0 +1,44 @@
+include ../../components/header/header
+include ../../components/navigation/navigation
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/main-section-title/main-section-title
+include ../../components/sidebar/sidebar
+include ../../components/photos-archive/photos-archive
+include ../../components/footer/footer
+
+-var data = require('./about-founder.data');
+
+doctype html
+html
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Garden - About founder
+        meta(name='description', content= "Official Travnikov's garden site")
+    body.c-garden-page
+        +header
+        +navigation
+        .c-garden-page__scene.c-about-founder-page__scene
+        +breadcrumbs(data.breadcrumbs)
+        .c-garden-page__title
+            .container
+                +main-section-title('Об основателе', 'c-about-founder-page__icon')
+        .c-garden-page__content
+            .container
+                .row
+                    .col-md-9
+                        img.c-about-founder-page__left-photo(src=require('../../resources/external-images/about-founder/photo-1.jpg'))
+                        p Павел Иванович Травников, человек, основавший сад во дворе своего дома, родился 17 марта 1908 года. Окончил Высшую партийную школу, кадровым военным служил на русско-польской границе до 1938 года, в котором его перевели в Москву. 10 лет работал в КГБ. Учился на юридическом факультете.
+                        p В 1947 году, в командировке пострадал в автокатастрофе, повредился позвоночник. Из-за не правильно поставленного диагноза и не правильного лечения раскрошились 6 позвонков. 2 года Павел Иванович пролежал в гипсовой кроватке. После, носил жесткий корсет. Вставать начал в 1954 году.
+                        p Сад начал основывать в 1957-58 годах. Сильно увлекался своим занятием, сад был общеизвестен, П.И.Травников проводил в саду много времени - от рассвета до заката –всегда хотел стать агрономом. В саду собралась великолепная коллекция растений.
+                        img.c-about-founder-page__right-photo(src=require('../../resources/external-images/about-founder/photo-2.jpg'))
+                        br
+                        br
+                        p В 1980 году у него парализовало ноги – это был первый признак онкологического заболевания. В 1985 году П.И.Травников скончался.
+                        p В этом году Павлу Ивановичу Травникову было бы 100 лет. Саду же исполняется 50. П.И.Травников начал создавать оазис в центре Москвы, с успехом занимался своим делом, а мы пытаемся продолжить и восстановить былое великолепие.
+                        p Благодаря трудолюбию своего создателя сад стал популярен, был удостоен многих наград, о нём были опубликованы газетные и журнальные статьи, сделаны телепередачи, в сад приходило много известных людей и специалистов, проводились экскурсии.
+                        +photos-archive(data.photosArchive)(class='c-about-founder-page__photos-archive')
+                    .col-md-3
+                        +sidebar(data.sidebar)
+        +footer
