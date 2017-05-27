@@ -9,19 +9,19 @@ const sidebar = {
         title: 'О саде',
         items: [
             {href: '', name: 'Об основателе'},
-            {href: '', name: 'О Н.И. Романовой'},
+            {href: 'about-romanova.html', name: 'О Н.И. Романовой'},
             {href: '', name: 'Возрождение'}
         ]
     }
 };
 
 const photosArchive = [
-    require('../../resources/external-images/about-founder/archive-photo-1.jpg'),
-    require('../../resources/external-images/about-founder/archive-photo-2.jpg'),
-    require('../../resources/external-images/about-founder/archive-photo-3.jpg'),
-    require('../../resources/external-images/about-founder/archive-photo-4.jpg'),
-    require('../../resources/external-images/about-founder/archive-photo-5.jpg'),
-    require('../../resources/external-images/about-founder/archive-photo-6.jpg')
+    require('../../resources/external-images/about-founder/about-founder-archive-photo-1.jpg'),
+    require('../../resources/external-images/about-founder/about-founder-archive-photo-2.jpg'),
+    require('../../resources/external-images/about-founder/about-founder-archive-photo-3.jpg'),
+    require('../../resources/external-images/about-founder/about-founder-archive-photo-4.jpg'),
+    require('../../resources/external-images/about-founder/about-founder-archive-photo-5.jpg'),
+    require('../../resources/external-images/about-founder/about-founder-archive-photo-6.jpg')
 ];
 
 export {breadcrumbs, sidebar, photosArchive};

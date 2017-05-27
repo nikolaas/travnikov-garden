@@ -23,6 +23,7 @@ const PAGES = [
     'about',
     'garden-history',
     'about-founder',
+    'about-romanova',
     'legal-position',
     'news',
     'partnership'
