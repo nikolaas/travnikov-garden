@@ -1,0 +1,10 @@
+include ../section-title/section-title
+
+mixin photos-archive(photos)
+    .photos-archive&attributes(attributes)
+        +section-title('Архив фотографий')
+        .row
+            each photo in photos
+                .col-md-4
+                    a.photos-archive__photo(href='')
+                            img.photos-archive__photo-image(src=photo)

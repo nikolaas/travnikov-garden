@@ -15,4 +15,5 @@ import './garden-statistics';
 import './ours-plants';
 import './feedback-form';
 import './map';
+import './photos-archive';
 import './footer';
