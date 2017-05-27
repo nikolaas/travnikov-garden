@@ -1,0 +1,1 @@
+import './bordered-image.styl';

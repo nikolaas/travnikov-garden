@@ -1,0 +1,5 @@
+-var mergeClasses = require('../../utils/classes-utils').mergeClasses;
+
+mixin bordered-image
+    div(class=mergeClasses('c-bordered-image', attributes.class))
+        img(src=attributes.src)

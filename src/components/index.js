@@ -5,6 +5,7 @@ import './main-section-title';
 import './section-title';
 import './popup-menu';
 import './hovered-flower';
+import './bordered-image';
 import './sketched-image';
 import './slider';
 import './breadcrumbs';
