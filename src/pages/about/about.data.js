@@ -13,4 +13,7 @@ const sidebar = {
     }
 };
 
-export {breadcrumbs, sidebar};
+const photo1 = require('../../resources/external-images/about/about-garden-1.jpg');
+const photo2 = require('../../resources/external-images/about/about-garden-2.jpg');
+
+export {breadcrumbs, sidebar, photo1, photo2};

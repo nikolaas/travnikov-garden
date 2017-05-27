@@ -1,0 +1,1 @@
+import './sketched-image.styl';

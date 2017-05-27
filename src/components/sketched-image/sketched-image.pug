@@ -1,0 +1,11 @@
+-var mergeClasses = require('../../utils/classes-utils').mergeClasses;
+-var defaultSketch = require('../../resources/images/sketch.jpg');
+
+mixin sketched-image(image, left, sketch)
+    - left = left != null ? left : true;
+    - sketch = sketch || defaultSketch
+    -var classes = mergeClasses('c-sketched-image', left ? 'c-sketched-image--left' : 'c-sketched-image--right', attributes.class);
+    div(class=classes)
+        img.c-sketched-image__sketch(src=sketch)
+        .c-sketched-image__image-container
+            img.c-about-page__image(src=image)
