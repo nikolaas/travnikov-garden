@@ -3,6 +3,8 @@ include ../../components/navigation/navigation
 include ../../components/breadcrumbs/breadcrumbs
 include ../../components/main-section-title/main-section-title
 include ../../components/sidebar/sidebar
+include ../../components/bordered-image/bordered-image
+include ../../components/sketched-image/sketched-image
 include ../../components/photos-archive/photos-archive
 include ../../components/footer/footer
 
@@ -28,11 +30,11 @@ html
             .container
                 .row
                     .col-md-9
-                        img.c-about-founder-page__left-photo(src=require('../../resources/external-images/about-founder/about-founder-photo-1.jpg'))
+                        +sketched-image(data.photo1)
                         p Павел Иванович Травников, человек, основавший сад во дворе своего дома, родился 17 марта 1908 года. Окончил Высшую партийную школу, кадровым военным служил на русско-польской границе до 1938 года, в котором его перевели в Москву. 10 лет работал в КГБ. Учился на юридическом факультете.
                         p В 1947 году, в командировке пострадал в автокатастрофе, повредился позвоночник. Из-за не правильно поставленного диагноза и не правильного лечения раскрошились 6 позвонков. 2 года Павел Иванович пролежал в гипсовой кроватке. После, носил жесткий корсет. Вставать начал в 1954 году.
                         p Сад начал основывать в 1957-58 годах. Сильно увлекался своим занятием, сад был общеизвестен, П.И.Травников проводил в саду много времени - от рассвета до заката –всегда хотел стать агрономом. В саду собралась великолепная коллекция растений.
-                        img.c-about-founder-page__right-photo(src=require('../../resources/external-images/about-founder/about-founder-photo-2.jpg'))
+                        +bordered-image(class='c-about-founder-page__right-photo', src=data.photo2)
                         br
                         br
                         p В 1980 году у него парализовало ноги – это был первый признак онкологического заболевания. В 1985 году П.И.Травников скончался.

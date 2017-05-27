@@ -1,4 +1,5 @@
 include ../section-title/section-title
+include ../bordered-image/bordered-image
 
 mixin photos-archive(photos)
     .photos-archive&attributes(attributes)
@@ -7,4 +8,4 @@ mixin photos-archive(photos)
             each photo in photos
                 .col-md-4
                     a.photos-archive__photo(href='')
-                            img.photos-archive__photo-image(src=photo)
+                        +bordered-image(class='photos-archive__photo-image', src=photo)
