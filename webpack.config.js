@@ -130,6 +130,23 @@ const imagesRule = {
             limit: 10000,
             name: '[name].[ext]?hash=[hash]',
             outputPath: 'images/',
+            publicPath: 'images/'
+        }
+    }
+};
+//правила обработки статических изображений сайта
+const styleImagesRule = {
+    test: /\.(png|jpg)$/,
+    include: [
+        path.resolve(paths.src, 'resources', 'style-images'),
+        paths.generatedSrc
+    ],
+    use: {
+        loader: 'url-loader',
+        options: {
+            limit: 10000,
+            name: '[name].[ext]?hash=[hash]',
+            outputPath: 'images/',
             publicPath: '../images/'
         }
     }
@@ -179,6 +196,7 @@ const common = {
             appStylesRule,
             fontsRule,
             imagesRule,
+            styleImagesRule,
             externalImagesRule
         ]
     },

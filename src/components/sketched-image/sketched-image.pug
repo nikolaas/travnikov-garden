@@ -1,11 +1,9 @@
 include ../bordered-image/bordered-image
 
 -var mergeClasses = require('../../utils/classes-utils').mergeClasses;
--var defaultSketch = require('../../resources/images/sketch.jpg');
 
-mixin sketched-image(image, left, sketch)
+mixin sketched-image(image, left)
     - left = left != null ? left : true;
-    - sketch = sketch || defaultSketch
     -var classes = mergeClasses('c-sketched-image', left ? 'c-sketched-image--left' : 'c-sketched-image--right', attributes.class);
     div(class=classes)
         +bordered-image(class='c-sketched-image__image', src=image)
