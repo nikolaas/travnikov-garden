@@ -1,0 +1,44 @@
+include ../../components/header/header
+include ../../components/navigation/navigation
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/main-section-title/main-section-title
+include ../../components/sidebar/sidebar
+include ../../components/hovered-flower/hovered-flower
+include ../../components/footer/footer
+
+-var data = require('./flowering-plants.data');
+
+doctype html
+html
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Garden - Flowering Plants
+        meta(name='description', content= "Official Travnikov's garden site")
+    body.c-garden-page
+        +header
+        +navigation
+        .c-garden-page__scene.c-flowering-plants-page__scene
+        +breadcrumbs(data.breadcrumbs)
+        .c-garden-page__title
+            .container
+                +main-section-title('Что сейчас цветет', 'c-flowering-plants-page__icon')
+        .c-garden-page__content
+            .container
+                .col-md-9
+                    p Сад П.И.Травникова - ценнейший объект культурного и экологического наследия Москвы, единственная сохранившаяся ООПТ (особо охраняемая природная территория) в ЦАО. Сад создавался в 1957-58 годах, и за время своего существования вместе со своим создателем Павлом Ивановичем Травниковым был удостоен грамот, медалей и признания, в 1989 году получил статус памятника природы, созданного руками человека.
+                    .row.c-flowering-plants-page__plants
+                        each plant in data.floweringPlants
+                            .col-md-4
+                                .c-flowering-plants-page__plant
+                                    .c-flowering-plants-page__plant-image-container
+                                        img.c-flowering-plants-page__plant-image(src=plant.image)
+                                        +hovered-flower('c-flowering-plants-page__plant-link')
+                                    .c-flowering-plants-page__plant-name= plant.name
+                                    .c-flowering-plants-page__plant-latin-name= plant.latinName
+                    .c-flowering-plants-page__more-plants
+                        a.btn.btn-default(href='') Больше растений
+                .col-md-3
+                    +sidebar(data.sidebar)
+        +footer

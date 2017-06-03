@@ -37,7 +37,7 @@ const subsections = [
         description: 'жизненная форма деревянистых растений с единственной, отчётливо выраженной, многолетней, в разной степени одревесневшей, сохраняющейся в течение всей жизни, разветвлённой главной осью — стволом.',
         image: require('../../resources/external-images/plants/flowering-plants-subsection.jpg'),
         sketch: require('../../resources/external-images/plants/flowering-plants-subsection-sketch.png'),
-        link: ''
+        link: 'flowering-plants.html'
     },
 ];
 

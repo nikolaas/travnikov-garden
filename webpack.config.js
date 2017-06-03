@@ -26,6 +26,7 @@ const PAGES = [
     'about-romanova',
     'legal-position',
     'plants',
+    'flowering-plants',
     'news',
     'partnership'
 ];
