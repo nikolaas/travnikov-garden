@@ -1,0 +1,63 @@
+include ../../components/header/header
+include ../../components/navigation/navigation
+include ../../components/breadcrumbs/breadcrumbs
+include ../../components/main-section-title/main-section-title
+include ../../components/section-title/section-title
+include ../../components/sidebar/sidebar
+include ../../components/slider/slider
+include ../../components/plants-collection/plants-collection
+include ../../components/footer/footer
+include components/plant-images-slider/plant-images-slider
+
+-var data = require('./plant.data');
+
+doctype html
+html
+    head
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Garden - Plant
+        meta(name='description', content= "Official Travnikov's garden site")
+    body.c-garden-page
+        +header
+        +navigation
+        .c-garden-page__scene.c-plant-page__scene
+        +breadcrumbs(data.breadcrumbs)
+        .c-garden-page__title
+            .container
+                +main-section-title('Наименование растения', 'c-plant-page__icon')
+        .c-garden-page__content
+            .container
+                .col-md-9
+                    .c-plant-page__plant
+                        .row
+                            .col-md-5
+                                +plant-images-slider(data.plantImages)
+                            .col-md-7
+                                .c-plant-page__plant-description
+                                    p Сад П.И.Травникова - ценнейший объект культурного и экологического наследия Москвы, единственная сохранившаяся ООПТ (особо охраняемая природная территория) в ЦАО. Сад создавался в 1957-58 годах, и за время своего существования вместе со своим создателем Павлом Ивановичем Травниковым был удостоен грамот, медалей и признания, в 1989 году получил статус памятника природы, созданного руками человека.
+                                    p Произошло резкое уменьшение сортового разнообразия, что не удивительно. Отсутствие должного ухода естественно привело к гибели более нежных сортов. Вторая возможная причина это деятельность садоводов, выкапывающих самые интересные и редкие экземпляры для дачи (по крайней мере, по словам местных жителей).
+                    .c-plant-page__details
+                        ul.nav.nav-tabs
+                            li.active.c-plant-page__plant-info-tab-header
+                                a.c-plant-page__plant-info-tab-header-link(data-toggle="tab" href="#details-tab") Подробное описание
+                            li.c-plant-page__plant-info-tab-header
+                                a.c-plant-page__plant-info-tab-header-link(data-toggle="tab" href="#care-tab") Как ухаживать
+                        .tab-content.c-plant-page__plant-info
+                            .tab-pane.fade.in.active(id="details-tab")
+                                .row
+                                    .col-lg-8
+                                        p Произошло резкое уменьшение сортового разнообразия, что не удивительно. Отсутствие должного ухода естественно привело к гибели более нежных сортов. Вторая возможная причина это деятельность садоводов, выкапывающих самые интересные и редкие экземпляры для дачи (по крайней мере, по словам местных жителей).
+                                        p Настораживает резкое уменьшение количества видов деревьев и кустарников (более чем в два раза). Есть вероятность того, что в газетных статьях была допущена путаница с терминами. Возможно там приведено количество особей или сортов, но не видов. В настоящее время в саду зафиксировано около 80 экземпляров деревьев и кустарников. Из упомянутых в статьях не найдено 8 видов кустарников. Например, катальпа исчезла еще при жизни П.И.Травникова в результате прокладки труб.
+                                    .col-md-4
+                                        img.c-plant-page__plant-detail-image(src=data.detailImage)
+                            .tab-pane.fade(id="care-tab")
+                                p Произошло резкое уменьшение сортового разнообразия, что не удивительно. Отсутствие должного ухода естественно привело к гибели более нежных сортов. Вторая возможная причина это деятельность садоводов, выкапывающих самые интересные и редкие экземпляры для дачи (по крайней мере, по словам местных жителей).
+                                p Настораживает резкое уменьшение количества видов деревьев и кустарников (более чем в два раза). Есть вероятность того, что в газетных статьях была допущена путаница с терминами. Возможно там приведено количество особей или сортов, но не видов. В настоящее время в саду зафиксировано около 80 экземпляров деревьев и кустарников. Из упомянутых в статьях не найдено 8 видов кустарников. Например, катальпа исчезла еще при жизни П.И.Травникова в результате прокладки труб.
+                        .c-plant-page__recent-plants
+                            +section-title('Вы смотрели')
+                            +plants-collection(data.recentPlants)
+                .col-md-3
+                    +sidebar(data.sidebar)
+        +footer

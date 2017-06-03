@@ -1,0 +1,54 @@
+@import '../../styles/colors.styl';
+
+.c-plant-page__scene {
+  background-image url('../../resources/style-images/header-plant.jpg')
+}
+
+.c-plant-page__icon {
+  background url('../../resources/style-images/ours-plants.png') no-repeat center
+  width 59px
+  height 50px
+  display block
+}
+
+.c-plant-page__details {
+  margin-top 50px
+}
+
+.c-plant-page__plant-info-tab-header {
+  .c-plant-page__plant-info-tab-header-link {
+    color $default-text-color
+
+    &:visited,
+    &:active,
+    &:hover {
+      color $default-text-color
+      text-decoration none
+    }
+  }
+
+  &.active {
+    .c-plant-page__plant-info-tab-header-link {
+      color $common-text-color
+
+      &:visited,
+      &:active,
+      &:hover {
+        color $common-text-color
+        text-decoration none
+      }
+    }
+  }
+}
+
+.c-plant-page__plant-info {
+  margin-top 30px
+}
+
+.c-plant-page__plant-detail-image {
+  width 100%
+}
+
+.c-plant-page__recent-plants {
+  margin-top 70px
+}

@@ -1,0 +1,8 @@
+mixin plant-images-slider(images)
+    .c-plant-images-slider&attributes(attributes)
+        .c-plant-images-slider__main-images
+            each image in images
+                img.c-plant-images-slider__main-image(src=image.image)
+        .c-plant-images-slider__images
+            each image in images
+                img.c-plant-images-slider__image(src=image.preview)

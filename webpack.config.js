@@ -27,6 +27,7 @@ const PAGES = [
     'legal-position',
     'plants',
     'flowering-plants',
+    'plant',
     'news',
     'partnership'
 ];

@@ -8,7 +8,7 @@ mixin ours-plants(oursPlants)
             each plant in oursPlants
                 -const background = "background-image:url(" + plant.image+ ")";
                 .c-ours-plants__gallery-item(style=background)
-                    +hovered-flower('c-ours-plants__gallery-item-link')
+                    +hovered-flower('c-ours-plants__gallery-item-link', 'plant.html')
         .container
             .row
                 .col-md-offset-5.col-md-2
