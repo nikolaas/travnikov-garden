@@ -8,5 +8,4 @@ mixin sketched-image(image, left, sketch)
     - sketch = sketch || defaultSketch
     -var classes = mergeClasses('c-sketched-image', left ? 'c-sketched-image--left' : 'c-sketched-image--right', attributes.class);
     div(class=classes)
-        img.c-sketched-image__sketch(src=sketch)
         +bordered-image(class='c-sketched-image__image', src=image)

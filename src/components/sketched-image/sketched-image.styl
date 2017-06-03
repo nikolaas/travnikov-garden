@@ -4,6 +4,7 @@ $sketch-offset = 80px
 
 .c-sketched-image {
   position relative
+  background url("../../resources/images/sketch.jpg")no-repeat bottom right
 }
 
 .c-sketched-image__sketch {
@@ -18,8 +19,8 @@ $sketch-offset = 80px
 
 .c-sketched-image--left {
   float left
-  margin-right ($sketch-offset + 30px)
-  margin-bottom ($sketch-offset + 30px)
+  padding-right ($sketch-offset + 30px)
+  padding-bottom ($sketch-offset + 30px)
 
   .c-sketched-image__sketch {
     right -($sketch-offset)
@@ -29,8 +30,10 @@ $sketch-offset = 80px
 
 .c-sketched-image--right {
   float right
-  margin-left ($sketch-offset + 30px)
-  margin-bottom ($sketch-offset + 30px)
+  padding-left ($sketch-offset + 30px)
+  padding-bottom ($sketch-offset + 30px)
+  background-position bottom left
+
 
   .c-sketched-image__sketch {
     left -($sketch-offset)
