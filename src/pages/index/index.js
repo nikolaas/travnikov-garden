@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import newsList from '../../components/news/index';
+import {newsList} from './components';
 
 $(pageController);
 
