@@ -1,0 +1,9 @@
+include ../hovered-flower/hovered-flower
+
+mixin plant(plant)
+    .c-plant
+        .c-plant__image-container
+            img.c-plant__image(src=plant.image)
+            +hovered-flower('c-plant__link', 'plant.html')
+        .c-plant__name= plant.name
+        .c-plant__latin-name= plant.latinName

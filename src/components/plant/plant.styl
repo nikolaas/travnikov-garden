@@ -1,0 +1,58 @@
+@import '../../styles/colors.styl';
+
+.c-plant {
+  margin-bottom 30px
+  padding 15px
+  text-align center
+  border 1px solid $minor-border-color
+}
+
+.c-plant__image-container {
+  position relative
+  width 100%
+  margin-bottom 15px
+
+  &:hover {
+    .c-hovered-flower {
+      opacity 1
+      transform scale(1)
+    }
+  }
+}
+
+.c-plant__image {
+  width 100%
+}
+
+.c-plant__link {
+  background url("../../resources/style-images/plus.png") no-repeat center
+
+  &::before {
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+  }
+}
+
+.c-plant__name {
+  font-family 'Georgia'
+  font-size 18px
+  margin-top 15px
+
+  &::after {
+    content ''
+    display block
+    width: 50px;
+    height: 1px;
+    margin: 15px auto 0 auto;
+    background-color $minor-border-color
+  }
+}
+
+.c-plant__latin-name {
+  font-family 'Georgia'
+  font-size 14px
+  font-style italic
+  margin 15px 0
+}

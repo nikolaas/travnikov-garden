@@ -11,6 +11,7 @@ import './slider';
 import './breadcrumbs';
 import './sidebar';
 import './garden-statistics';
+import './plant';
 import './feedback-form';
 import './map';
 import './photos-archive';

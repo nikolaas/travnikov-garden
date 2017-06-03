@@ -3,7 +3,7 @@ include ../../components/navigation/navigation
 include ../../components/breadcrumbs/breadcrumbs
 include ../../components/main-section-title/main-section-title
 include ../../components/sidebar/sidebar
-include ../../components/hovered-flower/hovered-flower
+include ../../components/plant/plant
 include ../../components/footer/footer
 
 -var data = require('./flowering-plants.data');
@@ -31,12 +31,7 @@ html
                     .row.c-flowering-plants-page__plants
                         each plant in data.floweringPlants
                             .col-md-4
-                                .c-flowering-plants-page__plant
-                                    .c-flowering-plants-page__plant-image-container
-                                        img.c-flowering-plants-page__plant-image(src=plant.image)
-                                        +hovered-flower('c-flowering-plants-page__plant-link')
-                                    .c-flowering-plants-page__plant-name= plant.name
-                                    .c-flowering-plants-page__plant-latin-name= plant.latinName
+                                +plant(plant)
                     .c-flowering-plants-page__more-plants
                         a.btn.btn-default(href='') Больше растений
                 .col-md-3
