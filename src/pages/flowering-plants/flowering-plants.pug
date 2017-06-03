@@ -3,7 +3,7 @@ include ../../components/navigation/navigation
 include ../../components/breadcrumbs/breadcrumbs
 include ../../components/main-section-title/main-section-title
 include ../../components/sidebar/sidebar
-include ../../components/plant/plant
+include ../../components/plants-collection/plants-collection
 include ../../components/footer/footer
 
 -var data = require('./flowering-plants.data');
@@ -28,10 +28,7 @@ html
             .container
                 .col-md-9
                     p Сад П.И.Травникова - ценнейший объект культурного и экологического наследия Москвы, единственная сохранившаяся ООПТ (особо охраняемая природная территория) в ЦАО. Сад создавался в 1957-58 годах, и за время своего существования вместе со своим создателем Павлом Ивановичем Травниковым был удостоен грамот, медалей и признания, в 1989 году получил статус памятника природы, созданного руками человека.
-                    .row.c-flowering-plants-page__plants
-                        each plant in data.floweringPlants
-                            .col-md-4
-                                +plant(plant)
+                    +plants-collection(data.floweringPlants)(class="c-flowering-plants-page__plants")
                     .c-flowering-plants-page__more-plants
                         a.btn.btn-default(href='') Больше растений
                 .col-md-3

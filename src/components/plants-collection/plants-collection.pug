@@ -1,0 +1,7 @@
+include ../plant/plant
+
+mixin plants-collection(plants)
+    .row&attributes(attributes)
+        each plant in plants
+            .col-md-4
+                +plant(plant)
