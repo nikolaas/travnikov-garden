@@ -28,6 +28,7 @@ const PAGES = [
     'plants',
     'flowering-plants',
     'plant',
+    'gallery',
     'news',
     'partnership'
 ];
