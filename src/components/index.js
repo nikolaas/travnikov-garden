@@ -7,7 +7,6 @@ import './popup-menu';
 import './hovered-flower';
 import './bordered-image';
 import './sketched-image';
-import './slider';
 import './breadcrumbs';
 import './sidebar';
 import './garden-statistics';

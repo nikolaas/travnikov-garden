@@ -1,3 +1,4 @@
+export * from './slider';
 export * from './news';
 export * from './news-subcscription';
 export * from './garden-about';
