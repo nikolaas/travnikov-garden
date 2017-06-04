@@ -1,0 +1,106 @@
+@import '../../../../styles/colors.styl';
+
+.c-time-slider {
+  position relative
+}
+
+.c-time-slider__time {
+  position relative
+
+  &::before {
+    content ''
+    position absolute
+    display block
+    width 100%
+    height 1px
+    bottom 7px
+    background-color $minor-border-color
+  }
+}
+
+.c-time-slider__time-value {
+  display block
+  margin-left auto
+  margin-right auto
+  padding-bottom 15px
+  background none
+  border none
+  outline none
+  text-align center
+  cursor pointer
+  font-family 'Georgia'
+  font-size 24px
+}
+
+$time-pointer-transition = background-color 0.2s ease-in, border-color 0.2s ease-in;
+
+.c-time-slider__time-pointer {
+  position: relative;
+  display block
+  width 15px
+  height 15px
+  margin-top: 35px;
+  margin-left auto
+  margin-right auto
+  background none
+  border 1px solid $minor-border-color
+  background-color $common-background-color
+  border-radius 100%
+  outline none
+  cursor pointer
+  transition $time-pointer-transition
+
+  &::before {
+    content ''
+    position: absolute;
+    display block
+    width 1px
+    height 35px
+    top: -35px;
+    background-color $minor-border-color
+    transition $time-pointer-transition
+  }
+}
+
+.slick-current {
+  .c-time-slider__time-pointer {
+    border 1px solid $common-border-color
+    background-color $accent-background-color
+
+    &::before {
+      background-color $common-border-color
+    }
+  }
+}
+
+.c-time-slider__prev-arrow,
+.c-time-slider__next-arrow {
+  position absolute
+  top 50%
+  transform translateY(-50%)
+  border none
+  outline none
+  opacity 0
+  transition opacity 0.2s ease-in
+}
+
+.c-time-slider__prev-arrow {
+  background url('../../../../resources/style-images/time-slider-left.png') no-repeat center
+  width 40px
+  height 40px
+  left 15px
+}
+
+.c-time-slider__next-arrow {
+  background url('../../../../resources/style-images/time-slider-right.png') no-repeat center
+  width 40px
+  height 40px
+  right 15px
+}
+
+.c-time-slider:hover {
+  .c-time-slider__prev-arrow,
+  .c-time-slider__next-arrow {
+    opacity 1
+  }
+}

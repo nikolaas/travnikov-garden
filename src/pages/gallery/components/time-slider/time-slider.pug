@@ -1,0 +1,6 @@
+mixin time-slider(times)
+    .c-time-slider
+        each time in times
+            div.c-time-slider__time
+                button.c-time-slider__time-value= time
+                button.c-time-slider__time-pointer

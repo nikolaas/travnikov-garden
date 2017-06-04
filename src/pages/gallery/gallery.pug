@@ -3,8 +3,8 @@ include ../../components/navigation/navigation
 include ../../components/breadcrumbs/breadcrumbs
 include ../../components/main-section-title/main-section-title
 include ../../components/sidebar/sidebar
-include ../../components/garden-statistics/garden-statistics
 include ../../components/footer/footer
+include components/time-slider/time-slider
 
 -var data = require('./gallery.data');
 
@@ -26,4 +26,5 @@ html
                 +main-section-title('Фотогалерея', 'fa fa-picture-o')
         .c-garden-page__content.c-plants-page__content
             .container
+                +time-slider(data.times)
         +footer
