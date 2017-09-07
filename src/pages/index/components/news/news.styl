@@ -1,4 +1,5 @@
 @import '../../../../styles/colors.styl';
+@import '../../../../styles/sizes.styl';
 
 $content-text-color = #301f0d
 
@@ -11,9 +12,11 @@ $content-text-color = #301f0d
    * для браузеров неподдерживающих флексбокс сработает скрипт,
    * который явно установит блокам одинаковую высоту
    */
-  display flex
-  align-items stretch
   margin 50px 0
+  @media (min-width: $landscape-tablet-width) {
+    display flex
+    align-items stretch
+  }
 }
 
 .c-news__new {
@@ -27,8 +30,9 @@ $content-text-color = #301f0d
 }
 
 .c-news__new-image {
-  width 360px
-  height: 260px
+  width 100%
+  //width 360px
+  //height: 260px
 }
 
 .c-news__new-title {
