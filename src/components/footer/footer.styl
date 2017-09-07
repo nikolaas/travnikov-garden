@@ -1,4 +1,5 @@
 @import '../../styles/colors.styl';
+@import '../../styles/sizes.styl';
 
 $footer-background-color = #272727;
 $footer-text-color = #c9c9c9;
@@ -166,9 +167,17 @@ $copyright-background = #313131;
 }
 
 .footer__copyright-data {
-  text-align left
+  text-align center
+
+  @media (min-width: $landscape-tablet-width) {
+    text-align left
+  }
 }
 
 .footer__development {
-  text-align right
+  text-align center
+
+  @media (min-width: $landscape-tablet-width) {
+    text-align right
+  }
 }
