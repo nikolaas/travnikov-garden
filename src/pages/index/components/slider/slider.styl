@@ -2,13 +2,15 @@
 @import '../../../../styles/sizes.styl';
 @import '../../../../styles/font-family.styl';
 
+.c-slider {
+  @media screen and (min-width: $landscape-tablet-width) {
+    border-top 5px solid $common-border-color
+  }
+}
+
 /**
  * Стиль для стрелочек-переключателей слайдов
  */
-.c-slider {
-  border-top 5px solid $common-border-color
-}
-
 .carousel-control__chevron {
   position absolute
   top 50%
