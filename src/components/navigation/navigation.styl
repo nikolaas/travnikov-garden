@@ -1,5 +1,7 @@
 @import '../../styles/colors.styl';
 @import '../../styles/mixins.styl';
+@import '../../styles/sizes.styl';
+@import '../../styles/font-family.styl';
 
 /*
  * Высота лого.
@@ -9,18 +11,26 @@
 $logo_height = 137px;
 
 .c-navigation {
-  padding-top 10px;
-  padding-bottom 10px;
-  background-color $common-background-color;
+  background-color $common-background-color
   color $common-text-color
-  font-family Georgia
-  font-size 14px
+  font-family $serif-font
+  font-size 12px
+  @media (min-width: $landscape-tablet-width) {
+    font-size 11px
+    padding-top 10px
+    padding-bottom 10px
+  }
+  @media (min-width: $notebook-width) {
+    font-size 14px
+    padding-top 10px
+    padding-bottom 10px
+  }
 }
 
 .c-navigation__menu {
   line-height $logo_height
   text-align justify
-  text-align-last: justify;
+  text-align-last: justify
 }
 
 .c-navigation__menu-item {
@@ -32,16 +42,16 @@ $logo_height = 137px;
   padding-bottom 35px
 
   &::before {
-    animated();
+    animated()
     content ''
     display block
-    position: absolute;
+    position: absolute
     width 1px
     left 50%
     top 0
     bottom  0
     opacity 0
-    transform: rotate(-30grad);
+    transform: rotate(-30grad)
     border-left 1px solid
     z-index 1
   }
@@ -58,7 +68,7 @@ $logo_height = 137px;
   &:hover {
     &::before {
       opacity 1
-      transform: rotate(30grad);
+      transform: rotate(30grad)
     }
 
     .c-navigation__popup-menu {
@@ -74,7 +84,7 @@ $logo_height = 137px;
 .c-navigation__menu-item--active {
   &::before {
     opacity 1
-    transform: rotate(30grad);
+    transform: rotate(30grad)
   }
 }
 
@@ -83,7 +93,7 @@ $logo_height = 137px;
 }
 
 .c-navigation__link {
-  animated();
+  animated()
   text-transform uppercase
   background-color $common-background-color
   color $common-text-color
@@ -98,5 +108,185 @@ $logo_height = 137px;
   &:hover {
     color $common-text-color
     text-decoration none
+  }
+}
+
+.c-navigation__logo-link{
+  width 100px
+  margin auto
+  display block
+  text-align center
+
+  img{
+    max-width 100%
+  }
+
+  @media (min-width: $portrait-tablet-width) {
+    width auto
+    display inline
+  }
+}
+
+.c-navigation__content--desktop {
+  display none
+  @media (min-width: $landscape-tablet-width) {
+    display block
+  }
+}
+
+.c-navigation__content--mobile {
+  @media (min-width: $landscape-tablet-width) {
+    display none
+  }
+  font-family $sans-serif-font
+  @media (min-width: $landscape-tablet-width) {
+    font-family Georgia
+  }
+
+  .c-navigation__menu {
+    line-height $logo_height
+    text-align left
+    text-align-last: left
+    background $accent-background-color
+    margin 0
+    padding 15px
+    display none
+  }
+
+  .c-navigation__menu-item {
+    position relative
+    display block
+    text-align center
+    padding 0
+    background $accent-background-color
+
+    &::before {
+      content ''
+      display none
+    }
+
+    .c-navigation__popup-menu {
+      animated()
+      display none
+    }
+
+    &:hover {
+      &::before {
+        opacity 0
+        display none
+      }
+
+      .c-navigation__popup-menu {
+        transform none
+      }
+    }
+  }
+
+  /**
+   * Класс предназначен для того, чтобы отметить элемент навигации,
+   * которому соответствует текущая открытая страница
+   */
+  .c-navigation__menu-item--active {
+    &::before {
+      opacity 0
+      transform: none
+    }
+  }
+  .c-navigation__logo {
+    text-align center
+    margin 15px 0
+  }
+
+  .c-navigation__link {
+    animated()
+    display block
+    line-height 40px
+    padding 0 15px
+    text-transform uppercase
+    background-color $accent-background-color
+    color $accent-text-color
+    white-space nowrap
+    position relative
+    z-index 2
+
+    &:active,
+    &:focus,
+    &:visited,
+    &:hover {
+      color $accent-text-color
+      text-decoration none
+      background $accent-link-color
+    }
+  }
+}
+
+.c-navigation__menu--active{
+
+}
+
+.c-navigation__header {
+  cursor pointer
+  line-height 45px
+  padding 0 15px
+  background-color $accent-background-color
+  color $accent-text-color
+  position relative
+  text-transform uppercase
+  font-family $sans-serif-font-semibold
+  font-size 16px
+}
+
+.c-navigation__header--active {
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.5);
+}
+
+.c-navigation__header-btn {
+  width 30px
+  height 14px
+  position absolute
+  margin 0 auto
+  top 15px
+  right 15px
+  transform rotate(0deg)
+  transition all 0.5s ease-out
+  cursor pointer
+
+  span {
+    display block
+    position absolute
+    height 2px
+    width 100%
+    background $common-background-color
+    opacity 1
+    margin-left 0
+    transform rotate(0deg)
+    transition all 0.25s ease-out
+
+    &:nth-child(1) {
+      top 0
+    }
+    &:nth-child(2) {
+      top 6px
+    }
+    &:nth-child(3) {
+      top 12px
+    }
+  }
+}
+
+.c-navigation__header-btn--open{
+  span {
+    &:nth-child(1) {
+      top 6px
+      transform rotate(135deg)
+    }
+    &:nth-child(2) {
+      opacity 0
+      left 0
+    }
+    &:nth-child(3) {
+      top 6px
+      transform rotate(-135deg)
+    }
   }
 }
