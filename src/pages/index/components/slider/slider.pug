@@ -1,5 +1,5 @@
 mixin slider(items)
-    .c-slider.carousel.slide.carousel-fade()&attributes(attributes)
+    .c-slider.carousel.slide.carousel-fade(data-ride="carousel")&attributes(attributes)
         ol.carousel-indicators
             each item, index in items
                 li(class=index == 0 ? 'active' : '' data-target='#' + attributes.id data-slide-to=index)
