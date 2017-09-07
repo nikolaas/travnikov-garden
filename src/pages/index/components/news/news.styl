@@ -5,6 +5,7 @@ $content-text-color = #301f0d
 
 .c-news {
   padding 70px 0
+  overflow hidden
 }
 
 .c-news__list {
@@ -13,9 +14,11 @@ $content-text-color = #301f0d
    * который явно установит блокам одинаковую высоту
    */
   margin 50px 0
+  padding-top 55px
   @media (min-width: $landscape-tablet-width) {
     display flex
     align-items stretch
+    padding-top 0
   }
 }
 
@@ -84,4 +87,24 @@ $content-text-color = #301f0d
   .btn {
     display inline-block
   }
+}
+
+.slick-arrow {
+  position absolute
+  top 0
+  font-size 24px
+  width 40px
+  height 40px
+  text-align center
+  color $common-text-color
+  border 1px solid $common-border-color
+  background none
+}
+
+.c-news__prev-arrow {
+  left 15px
+}
+
+.c-news__next-arrow {
+  right 15px
 }
