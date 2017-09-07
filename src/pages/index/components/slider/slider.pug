@@ -1,15 +1,17 @@
 mixin slider(items)
-    .carousel.slide.carousel-fade(data-ride="carousel")&attributes(attributes)
+    .c-slider.carousel.slide.carousel-fade()&attributes(attributes)
         ol.carousel-indicators
             each item, index in items
                 li(class=index == 0 ? 'active' : '' data-target='#' + attributes.id data-slide-to=index)
         .carousel-inner(role="listbox")
             each item, index in items
+                -const background = "background-image:url(" + item.src+ ")";
                 div(class=index == 0 ? 'item active' : 'item')
-                    img.d-block.img-fluid(src=item.src alt=item.title)
+                    //img.d-block.img-fluid(src=item.src alt=item.title)
+                    div.d-block.img-fluid.c-slider__image(style=background)
                     .container.carousel-item
                         .row
-                            .col-md-6
+                            .col-lg-6
                                 .carousel__item-title= item.title
                                 .carousel__item-description= item.description
                                 a.btn.btn-default.carousel__item-more(href='#') Подробнее

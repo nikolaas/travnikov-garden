@@ -1,12 +1,18 @@
 @import '../../../../styles/colors.styl';
+@import '../../../../styles/sizes.styl';
+@import '../../../../styles/font-family.styl';
 
 /**
  * Стиль для стрелочек-переключателей слайдов
  */
+.c-slider {
+  border-top 5px solid $common-border-color
+}
+
 .carousel-control__chevron {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position absolute
+  top 50%
+  transform translateY(-50%)
   font-size 24px
   /**
    * font-size(24px) + padding-top(5px) + padding-bottom(5px) = 34px - это у нас получились верхняя и нижняя границы
@@ -16,31 +22,50 @@
    *
    * Почему не сделал через фиксированные width и height? не получилось выровнять символ по середине
    */
-  padding: 5px 14px;
-  color: $common-text-color
-  border: 1px solid $common-border-color;
+  padding 5px 14px
+  color $common-text-color
+  border 1px solid $common-border-color
 }
 
-@media screen and (min-width: 768px) {
-  .carousel-control {
-    max-width 5%
 
-    &.left {
-      .carousel-control__chevron {
-        right 0
-      }
+.carousel-control {
+  width 55px
+
+  &.left {
+    .carousel-control__chevron {
+      left 15px
     }
-    &.right {
-      .carousel-control__chevron {
-        left 0
-      }
+  }
+  &.right {
+    .carousel-control__chevron {
+      right 15px
     }
+  }
+
+  @media screen and (min-width: $landscape-tablet-width) {
+      max-width 5%
+
+      &.left {
+        .carousel-control__chevron {
+          right 0
+          left auto
+        }
+      }
+      &.right {
+        .carousel-control__chevron {
+          left 0
+          right auto
+        }
+      }
   }
 }
 
+
 .carousel-inner {
-  max-height 600px
   overflow hidden
+  @media screen and (min-width: $notebook-width) {
+    max-height 600px
+  }
 }
 
 .img-responsive,
@@ -58,6 +83,10 @@
  * Кастомизация стиля индикаторов слайдов
  */
 .carousel-indicators {
+  display none
+  @media screen and (min-width: $portrait-tablet-width) {
+    display block
+  }
   .active {
     background-color: $accent-background-color
     border-color: $accent-background-color
@@ -68,24 +97,61 @@
  * Стили для текста с описанием слайда
  */
 .carousel-item {
+  width 100%
   position absolute
   top 0
-  left 50%
-  transform translateX(-50%)
+  text-align center
+  padding 0 70px
   color $accent-text-color
   z-index 30
+  @media screen and (min-width: $portrait-tablet-width) {
+    left 50%
+    transform translateX(-50%)
+    text-align left
+    width 70%
+    padding 0 15px
+  }
+  @media screen and (min-width: $landscape-tablet-width) {
+    left 50%
+    transform translateX(-50%)
+    text-align left
+    width 80%
+    padding 0 15px
+  }
+  @media screen and (min-width: $notebook-width) {
+    left 50%
+    transform translateX(-50%)
+    text-align left
+    width: 1170px;
+    padding 0 15px
+  }
 }
 
 .carousel__item-title {
-  margin-top 140px
-  font-family 'Georgia'
-  font-size 48px
+  margin-top 60px
+  font-family $serif-font
+  font-size 16px
   text-transform uppercase
+  text-align center
+  @media screen and (min-width: $portrait-tablet-width) {
+    margin-top 70px
+    font-size 24px
+    text-align left
+  }
+  @media screen and (min-width: $landscape-tablet-width) {
+    margin-top 140px
+    font-size 48px
+    text-align left
+  }
 }
 
 .carousel__item-description {
   margin-top 20px
   font-size 18px
+  display none
+  @media screen and (min-width: $portrait-tablet-width) {
+    display block
+  }
 }
 
 .carousel__item-more {
@@ -120,5 +186,17 @@
       left: 0;
       transform: translate3d(0, 0, 0);
     }
+  }
+}
+
+.c-slider__image {
+  width 100%
+  height 200px
+  background-size cover
+  @media screen and (min-width: $portrait-tablet-width){
+    height 478px
+  }
+  @media screen and (min-width: $landscape-tablet-width){
+    height 600px
   }
 }
