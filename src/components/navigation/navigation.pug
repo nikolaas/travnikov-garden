@@ -3,8 +3,8 @@ include ../popup-menu/popup-menu.pug
 mixin navigation
     nav.c-navigation
         .container
-            .row
-                ul.col-md-5.col-xs-12.c-navigation__menu
+            .row.c-navigation__content--desktop
+                ul.col-md-5.c-navigation__menu
                     li.c-navigation__menu-item
                         a.c-navigation__link(href='index.html') Главная
                     li.c-navigation__menu-item
@@ -20,7 +20,39 @@ mixin navigation
                 .col-md-2.c-navigation__logo
                     a(href='index.html')
                         img(src=require('../../resources/images/logo.png'))
-                ul.col-md-5.col-xs-12.c-navigation__menu
+                ul.col-md-5.c-navigation__menu
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='visitors.html') Посетителям
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='news.html') Новости
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='partnership.html') Сотрудничество
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='contacts.html') Контакты
+        .c-navigation__content--mobile.clearfix
+            .c-navigation__logo
+                a.c-navigation__logo-link(href='index.html')
+                    img(src=require('../../resources/images/logo.png'))
+            .clearfix
+                .c-navigation__header
+                    span Меню
+                    div.c-navigation__header-btn
+                        span
+                        span
+                        span
+                ul.c-navigation__menu
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='index.html') Главная
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='about.html') О саде
+                        +popup-menu([
+                            {title: 'История сада', href: 'garden-history.html'},
+                            {title: 'Юридическое положение', href: 'legal-position.html'},
+                        ])(class='c-navigation__popup-menu')
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='plants.html') Растения
+                    li.c-navigation__menu-item
+                        a.c-navigation__link(href='gallery.html') Фотогалерея
                     li.c-navigation__menu-item
                         a.c-navigation__link(href='visitors.html') Посетителям
                     li.c-navigation__menu-item
