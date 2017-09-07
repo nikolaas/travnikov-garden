@@ -9,7 +9,5 @@ mixin ours-plants(oursPlants)
                 -const background = "background-image:url(" + plant.image+ ")";
                 .c-ours-plants__gallery-item(style=background)
                     +hovered-flower('c-ours-plants__gallery-item-link', 'plant.html')
-        .container
-            .row
-                .col-md-offset-5.col-md-2
-                    button.btn.btn-default Больше фотографий
+        .c-section-button-center
+            button.btn.btn-default Больше фотографий
