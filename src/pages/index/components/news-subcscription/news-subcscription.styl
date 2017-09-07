@@ -1,11 +1,16 @@
 @import '../../../../styles/colors.styl';
+@import '../../../../styles/sizes.styl';
 
 .c-news-subscription {
   width 100%
-  height 254px
-  padding 70px 0
-  background url('../../../../resources/style-images/news-subscription.jpg') center fixed no-repeat
-  background-size cover
+  background $accent-background-color
+  height auto
+  padding 70px 0 35px
+  @media screen and (min-width $notebook-width){
+    height 254px
+    background url('../../../../resources/style-images/news-subscription.jpg') center fixed no-repeat
+    background-size cover
+  }
 }
 
 .c-news-subscription__section-title-container {
@@ -34,8 +39,19 @@
 }
 
 .c-news-subscription__subscription-form {
-  display flex
-  align-items center
+
+  text-align center
+
+  div{
+    margin-bottom 35px
+  }
+  @media screen and (min-width $landscape-tablet-width){
+    text-align left
+  }
+  @media screen and (min-width $notebook-width){
+    display flex
+    align-items center
+  }
 }
 
 .c-news-subscription__subscription-label {
