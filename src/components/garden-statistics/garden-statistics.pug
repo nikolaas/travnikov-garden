@@ -2,7 +2,7 @@ include ../live-counter/live-counter.pug
 
 mixin garden-statistics
     .c-garden-statistics&attributes(attributes)
-        .col-md-3.c-garden-statistics__item
+        .col-sm-6.col-md-3.c-garden-statistics__item
             .c-garden-statistics__icon-container
                 span.c-garden-statistics__icon.c-garden-statistics__icon--plants
             .c-garden-statistics__count
@@ -10,21 +10,21 @@ mixin garden-statistics
                 .c-garden-statistics__count-label Видов
             .c-garden-statistics__units
                 span Голосеменных растений
-        .col-md-3.c-garden-statistics__item
+        .col-sm-6.col-md-3.c-garden-statistics__item
             .c-garden-statistics__icon-container
                 span.c-garden-statistics__icon.c-garden-statistics__icon--trees
             .c-garden-statistics__count
                 +live-counter(10)(class='c-garden-statistics__count-value')
                 .c-garden-statistics__count-label Видов
             .c-garden-statistics__units Деревьев
-        .col-md-3.c-garden-statistics__item
+        .col-sm-6.col-md-3.c-garden-statistics__item
             .c-garden-statistics__icon-container
                 span.c-garden-statistics__icon.c-garden-statistics__icon--shrubs
             .c-garden-statistics__count
                 +live-counter(21)(class='c-garden-statistics__count-value')
                 .c-garden-statistics__count-label Вид
             .c-garden-statistics__units Кустарников
-        .col-md-3.c-garden-statistics__item
+        .col-sm-6.col-md-3.c-garden-statistics__item
             .c-garden-statistics__icon-container
                 span.c-garden-statistics__icon.c-garden-statistics__icon--herbs
             .c-garden-statistics__count
